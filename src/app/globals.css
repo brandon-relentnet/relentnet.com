@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*noinspection ALL*/
+@plugin "daisyui" {
+  exclude: rootscrollgutter;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@plugin "daisyui/theme" {
+  name: "darknet";
+  default: true;
+  prefersdark: true;
+  color-scheme: "light";
+  --color-base-100: #202024;
+  --color-base-200: #1a1a1e;
+  --color-base-300: #151518;
+  --color-base-content: oklch(100% 0 0);
+  --color-primary: #f38ab8;
+  --color-primary-content: oklch(12% 0.042 264.695);
+  --color-secondary: #a0a0a0;
+  --color-secondary-content: oklch(12% 0.042 264.695);
+  --color-accent: #56a7db;
+  --color-accent-content: oklch(12% 0.042 264.695);
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: hsl(250, 81.4%, 74.71%);
+  --color-info-content: oklch(12% 0.042 264.695);
+  --color-success: hsl(110, 81.4%, 74.71%);
+  --color-success-content: oklch(12% 0.042 264.695);
+  --color-warning: oklch(76% 0.188 70.08);
+  --color-warning-content: oklch(12% 0.042 264.695);
+  --color-error: oklch(64% 0.246 16.439);
+  --color-error-content: oklch(12% 0.042 264.695);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.3125rem;
+  --size-field: 0.3125rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/** Typography **/
+html {
+  font-family: "Poppins", sans-serif;
+  font-display: swap;
+  background-color: var(--color-base);
+  color: var(--color-text);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/** Background Masks **/
+.bg-mask-right {
+  background-color: var(--color-base);
+  background-size: calc(100% + 2px) calc(100% + 2px);
+  background-position: 50%;
+}
+
+.bg-mask-left {
+  background-color: var(--color-surface);
+  transform: scale(-1, 1);
+  background-position: right 0px center;
+}
+
+.bg-mask-right,
+.bg-mask-left {
+  -webkit-mask: url("/svg/bg-mask.svg") no-repeat center / cover;
+  mask: url("/svg/bg-mask.svg") no-repeat center / cover;
+  @apply inset-0 absolute overflow-hidden bg-no-repeat lg:visible invisible;
 }

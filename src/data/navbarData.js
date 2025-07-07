@@ -1,0 +1,186 @@
+import {
+  MagnifyingGlassIcon,
+  ArrowPathIcon,
+  GlobeAltIcon,
+  PencilIcon,
+  WrenchIcon,
+  DocumentIcon,
+  ChartBarIcon as NavChartBarIcon,
+  MegaphoneIcon,
+  ShoppingCartIcon,
+  ServerIcon,
+  CloudIcon,
+  CubeIcon,
+  LockClosedIcon,
+  ShieldCheckIcon,
+  ArrowRightStartOnRectangleIcon,
+  UserPlusIcon,
+  UserCircleIcon,
+  DocumentCurrencyDollarIcon,
+  ClipboardDocumentListIcon,
+  CreditCardIcon,
+  KeyIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/react/24/solid";
+
+// Navigation items data
+export const navItemsData = [
+  {
+    label: "Domains",
+    dropdown: true,
+    open: false,
+    sections: [
+      {
+        sectionLabel: "Find a Domain",
+        links: [
+          {
+            label: "Search for Domain Names",
+            url: "https://clients.relentnet.com/cart.php?a=add&domain=register",
+            icon: MagnifyingGlassIcon,
+          },
+          {
+            label: "Transfer Domain Names",
+            url: "https://clients.relentnet.com/cart.php?a=add&domain=transfer",
+            icon: ArrowPathIcon,
+          },
+          {
+            label: "gTLD Domain Extensions",
+            url: "https://clients.relentnet.com/cart.php?a=add&domain=register",
+            icon: GlobeAltIcon,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Websites",
+    dropdown: true,
+    open: false,
+    sections: [
+      {
+        sectionLabel: "Build & Design",
+        links: [
+          { label: "Website Design Services", url: "#", icon: PencilIcon },
+          { label: "Website Builder", url: "#", icon: WrenchIcon },
+          { label: "Website Templates", url: "#", icon: DocumentIcon },
+        ],
+      },
+      {
+        sectionLabel: "Services",
+        links: [
+          { label: "SEO Services", url: "#", icon: NavChartBarIcon },
+          {
+            label: "Digital Marketing Services",
+            url: "#",
+            icon: MegaphoneIcon,
+          },
+        ],
+      },
+      {
+        sectionLabel: "E-commerce",
+        links: [{ label: "Online Store", url: "#", icon: ShoppingCartIcon }],
+      },
+    ],
+  },
+  {
+    label: "Email",
+    dropdown: false,
+    url: "#",
+  },
+  {
+    label: "Hosting and Security",
+    dropdown: true,
+    open: false,
+    sections: [
+      {
+        sectionLabel: "Hosting",
+        links: [
+          { label: "WordPress Hosting", url: "#", icon: ServerIcon },
+          { label: "Web Hosting", url: "#", icon: CloudIcon },
+          { label: "VPS Hosting", url: "#", icon: CubeIcon },
+        ],
+      },
+      {
+        sectionLabel: "Security",
+        links: [
+          {
+            label: "SSL Certificates",
+            url: "https://clients.relentnet.com/index.php?rp=/store/ssl-certificates",
+            icon: LockClosedIcon,
+          },
+          { label: "Website Security", url: "#", icon: ShieldCheckIcon },
+        ],
+      },
+    ],
+  },
+  {
+    label: "About",
+    dropdown: false,
+    url: "#",
+  },
+];
+
+export const accountItemsData = [
+  {
+    label: "Account",
+    dropdown: true,
+    open: false,
+    sections: [
+      {
+        sectionLabel: "Members",
+        links: [
+          {
+            label: "Login",
+            url: "https://clients.relentnet.com/index.php?rp=/login",
+            icon: ArrowRightStartOnRectangleIcon,
+          },
+          {
+            label: "Create Account",
+            url: "https://clients.relentnet.com/register.php",
+            icon: UserPlusIcon,
+          },
+          {
+            label: "Account Details",
+            url: "https://clients.relentnet.com/clientarea.php?action=details",
+            icon: UserCircleIcon,
+          },
+        ],
+      },
+      {
+        sectionLabel: "Billing",
+        links: [
+          {
+            label: "Invoices",
+            url: "https://clients.relentnet.com/clientarea.php?action=invoices",
+            icon: DocumentCurrencyDollarIcon,
+          },
+          {
+            label: "Quotes",
+            url: "https://clients.relentnet.com/clientarea.php?action=quotes",
+            icon: ClipboardDocumentListIcon,
+          },
+          {
+            label: "Payment Methods",
+            url: "https://clients.relentnet.com/index.php?rp=/account/paymentmethods",
+            icon: CreditCardIcon,
+          },
+        ],
+      },
+      {
+        sectionLabel: "Support",
+        links: [
+          {
+            label: "Lost Password",
+            url: "https://clients.relentnet.com/index.php?rp=/password/reset",
+            icon: KeyIcon,
+          },
+          {
+            label: "Support Tickets",
+            url: "https://clients.relentnet.com/supporttickets.php",
+            icon: QuestionMarkCircleIcon,
+          },
+        ],
+      },
+    ],
+  },
+];
