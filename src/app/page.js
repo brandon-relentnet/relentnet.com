@@ -1,7 +1,9 @@
+import ServicesSection from "@/components/ServicesSection";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      test page
+    <div>
+      <ServicesSection />
     </div>
   );
 }

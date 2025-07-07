@@ -10,9 +10,9 @@
   default: true;
   prefersdark: true;
   color-scheme: "light";
-  --color-base-100: #202024;
-  --color-base-200: #1a1a1e;
-  --color-base-300: #151518;
+  --color-base-100: #1a1a1e;
+  --color-base-200: #151518;
+  --color-base-300: #202024;
   --color-base-content: oklch(100% 0 0);
   --color-primary: #f38ab8;
   --color-primary-content: oklch(12% 0.042 264.695);
@@ -35,7 +35,7 @@
   --radius-box: 0.5rem;
   --size-selector: 0.3125rem;
   --size-field: 0.3125rem;
-  --border: 1px;
+  --border: 2px;
   --depth: 1;
   --noise: 0;
 }
@@ -44,19 +44,17 @@
 html {
   font-family: "Poppins", sans-serif;
   font-display: swap;
-  background-color: var(--color-base);
-  color: var(--color-text);
 }
 
 /** Background Masks **/
 .bg-mask-right {
-  background-color: var(--color-base);
+  background-color: var(--color-base-200);
   background-size: calc(100% + 2px) calc(100% + 2px);
   background-position: 50%;
 }
 
 .bg-mask-left {
-  background-color: var(--color-surface);
+  background-color: var(--color-base-100);
   transform: scale(-1, 1);
   background-position: right 0px center;
 }
@@ -65,5 +63,16 @@ html {
 .bg-mask-left {
   -webkit-mask: url("/svg/bg-mask.svg") no-repeat center / cover;
   mask: url("/svg/bg-mask.svg") no-repeat center / cover;
-  @apply inset-0 absolute overflow-hidden bg-no-repeat lg:visible invisible;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  visibility: hidden;
+}
+
+@media (min-width: 1024px) {
+  .bg-mask-right,
+  .bg-mask-left {
+    visibility: visible;
+  }
 }
