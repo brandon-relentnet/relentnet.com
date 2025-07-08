@@ -148,9 +148,9 @@ export const navItemsData = [
     ],
   },
   {
-    label: "About",
+    label: "Contact",
     dropdown: false,
-    url: "/about",
+    url: "/contact",
   },
 ];
 

@@ -22,7 +22,7 @@ const TeamSection = () => {
             collaboratively to bring your online vision to life.
           </p>
         </div>
-        <div className="mb-8 grid grid-cols-1 place-content-center gap-12 lg:grid-cols-3">
+        <div className="mb-8 grid grid-cols-1 place-content-center gap-12 lg:grid-cols-2 2xl:grid-cols-4">
           {teamMembers.map((member, i) => (
             <div key={member.name} className="grid-card gap-y-4 text-center">
               <Image
