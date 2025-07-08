@@ -45,6 +45,19 @@
   --spacing-block: 3vw;
 }
 
+.h1 {
+  @apply mb-6 text-4xl font-medium md:text-5xl;
+}
+.h2 {
+  @apply mb-6 text-3xl font-medium md:text-4xl;
+}
+.h3 {
+  @apply mb-6 text-2xl font-medium md:text-3xl;
+}
+.h4 {
+  @apply mb-6 text-xl font-medium md:text-2xl;
+}
+
 /** Background Masks **/
 .bg-mask-right {
   background-color: var(--color-base-200);

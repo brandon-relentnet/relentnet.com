@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import ScrollButton from "../ScrollButton";
+import ScrollButton from "@/components/ScrollButton";
 import Image from "next/image";
 
 export default function HeroSection() {
