@@ -399,7 +399,8 @@ export default function WebsiteDesignServices() {
               <span className="font-semibold">Not sure which to choose?</span>{" "}
               Most businesses do great with WordPress.
               <br />
-              We'll recommend the best option during your free consultation.
+              We&apos;ll recommend the best option during your free
+              consultation.
             </p>
           </div>
         </div>
