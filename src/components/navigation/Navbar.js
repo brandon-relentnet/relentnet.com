@@ -1,12 +1,13 @@
-import { navItemsData, accountItemsData } from "../data/navbarData";
+import { navItemsData, accountItemsData } from "../../data/navbarData";
 import { UserIcon } from "@heroicons/react/24/solid";
 import NavbarClient from "./NavbarClient";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <>
       <NavbarClient>
-        <div className="navbar fixed top-0 left-0 right-0 h-18 z-200 bg-base-200 shadow-sm text-base-content">
+        <div className="navbar fixed top-0 left-0 right-0 h-20 z-200 bg-base-200 shadow-sm text-base-content">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -60,10 +61,17 @@ export default function Navbar() {
                 ))}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">RelentNet</a>
+            <a className="btn btn-ghost text-xl">
+              <Image
+                src="/images/relentnet-logo.png"
+                alt="RelentNet Logo"
+                width={40}
+                height={40}
+              />
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 menu-lg">
               {navItemsData.map((item, index) => (
                 <li key={index}>
                   {item.dropdown ? (
@@ -104,11 +112,14 @@ export default function Navbar() {
           <div className="navbar-end">
             <div className="dropdown dropdown-end">
               <details data-dropdown-id="account">
-                <summary className="btn btn-ghost" data-dropdown-id="account">
-                  <UserIcon className="h-5 w-5" />
+                <summary
+                  className="btn btn-ghost text-lg"
+                  data-dropdown-id="account"
+                >
+                  <UserIcon className="size-6" />
                   Account
                 </summary>
-                <ul className="menu dropdown-content bg-base-200 rounded-box z-1 mt-4 w-72 p-2 shadow">
+                <ul className="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-4 w-72 p-2 shadow">
                   {accountItemsData[0].sections.map((section, sectionIndex) => (
                     <div key={sectionIndex}>
                       <li className="menu-title text-primary">
@@ -133,7 +144,7 @@ export default function Navbar() {
           </div>
         </div>
       </NavbarClient>
-      <div className="h-18 w-full relative bg-base-100" />
+      <div className="h-20 w-full relative bg-base-100" />
     </>
   );
 }
