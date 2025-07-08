@@ -45,17 +45,21 @@
   --spacing-block: 3vw;
 }
 
-.h1 {
-  @apply mb-6 text-4xl font-medium md:text-5xl;
+.gradient-button {
+  @apply inline-block cursor-pointer rounded-xl bg-gradient-to-r from-primary to-accent px-6 py-3 text-lg font-semibold tracking-widest text-base-content transition-all duration-200 hover:scale-105 active:scale-95;
 }
-.h2 {
-  @apply mb-6 text-3xl font-medium md:text-4xl;
+.ghost-button {
+  @apply inline-block cursor-pointer rounded-xl border-2 border-secondary px-6 py-3 text-lg font-semibold tracking-widest text-base-content transition-all duration-200 hover:scale-105 hover:border-primary hover:bg-primary/10 active:scale-95 active:bg-primary/20;
 }
-.h3 {
-  @apply mb-6 text-2xl font-medium md:text-3xl;
+
+.section-title {
+  @apply relative mb-6 text-4xl font-medium md:text-5xl;
 }
-.h4 {
-  @apply mb-6 text-xl font-medium md:text-2xl;
+.section-subtitle {
+  @apply relative mb-2 text-sm font-bold tracking-widest text-primary uppercase;
+}
+.section-desc {
+  @apply relative mx-auto max-w-[80ch] text-base-content/80;
 }
 
 /** Background Masks **/

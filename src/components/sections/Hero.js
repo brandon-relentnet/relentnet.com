@@ -30,7 +30,7 @@ export default function HeroSection() {
         <Image
           src="/images/software-35.webp"
           alt="Hero Background"
-          className="object-cover w-full h-full"
+          className="h-full w-full object-cover"
           width={1920}
           height={1080}
           quality={80}
@@ -38,11 +38,11 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      <div className="hero !bg-transparent relative z-10 radial-gradient min-h-[calc(100vh-5rem)]">
+      <div className="radial-gradient relative z-10 hero min-h-[calc(100vh-5rem)] !bg-transparent">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <motion.h1
-              className="empower-text text-5xl md:text-6xl font-medium relative italic inline-block overflow-hidden rounded-xl text-primary p-2"
+              className="empower-text relative inline-block overflow-hidden rounded-xl p-2 text-5xl font-medium text-primary italic md:text-6xl"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
@@ -54,7 +54,7 @@ export default function HeroSection() {
               Empower
             </motion.h1>
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl text-center font-medium mb-6"
+              className="mb-6 text-center text-3xl font-medium md:text-4xl lg:text-5xl"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{

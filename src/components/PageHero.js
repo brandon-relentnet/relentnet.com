@@ -54,7 +54,7 @@ export default function PageHero({
       <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent mix-blend-multiply"></div>
       <div className="relative flex min-h-[calc(50vh-5rem)] scroll-m-20 items-center justify-center !bg-neutral/50 py-section">
         <div className="container mx-auto px-4 text-center">
-          <div className="relative mx-auto max-w-4xl p-20">
+          <div className="relative mx-auto max-w-6xl p-20">
             {/* Background Blur */}
             <div className="absolute inset-0 z-1 rounded-xl bg-neutral/40 blur-3xl backdrop-blur"></div>
 
