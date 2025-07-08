@@ -60,32 +60,54 @@ export const navItemsData = [
       {
         sectionLabel: "Build & Design",
         links: [
-          { label: "Website Design Services", url: "#", icon: PencilIcon },
-          { label: "Website Builder", url: "#", icon: WrenchIcon },
-          { label: "Website Templates", url: "#", icon: DocumentIcon },
+          {
+            label: "Website Design Services",
+            url: "/websites/design-services",
+            icon: PencilIcon,
+          },
+          {
+            label: "Website Builder",
+            url: "/websites/builder",
+            icon: WrenchIcon,
+          },
+          {
+            label: "Website Templates",
+            url: "/websites/templates",
+            icon: DocumentIcon,
+          },
         ],
       },
       {
         sectionLabel: "Services",
         links: [
-          { label: "SEO Services", url: "#", icon: NavChartBarIcon },
+          {
+            label: "SEO Services",
+            url: "/websites/seo-services",
+            icon: NavChartBarIcon,
+          },
           {
             label: "Digital Marketing Services",
-            url: "#",
+            url: "/websites/digital-marketing",
             icon: MegaphoneIcon,
           },
         ],
       },
       {
         sectionLabel: "E-commerce",
-        links: [{ label: "Online Store", url: "#", icon: ShoppingCartIcon }],
+        links: [
+          {
+            label: "Online Store",
+            url: "/websites/online-store",
+            icon: ShoppingCartIcon,
+          },
+        ],
       },
     ],
   },
   {
     label: "Email",
     dropdown: false,
-    url: "#",
+    url: "/email",
   },
   {
     label: "Hosting and Security",
@@ -95,9 +117,17 @@ export const navItemsData = [
       {
         sectionLabel: "Hosting",
         links: [
-          { label: "WordPress Hosting", url: "#", icon: ServerIcon },
-          { label: "Web Hosting", url: "#", icon: CloudIcon },
-          { label: "VPS Hosting", url: "#", icon: CubeIcon },
+          {
+            label: "WordPress Hosting",
+            url: "/hosting/wordpress",
+            icon: ServerIcon,
+          },
+          {
+            label: "Web Hosting",
+            url: "/hosting/web-hosting",
+            icon: CloudIcon,
+          },
+          { label: "VPS Hosting", url: "/hosting/vps", icon: CubeIcon },
         ],
       },
       {
@@ -108,7 +138,11 @@ export const navItemsData = [
             url: "https://clients.relentnet.com/index.php?rp=/store/ssl-certificates",
             icon: LockClosedIcon,
           },
-          { label: "Website Security", url: "#", icon: ShieldCheckIcon },
+          {
+            label: "Website Security",
+            url: "/security/website-security",
+            icon: ShieldCheckIcon,
+          },
         ],
       },
     ],
@@ -116,7 +150,7 @@ export const navItemsData = [
   {
     label: "About",
     dropdown: false,
-    url: "#",
+    url: "/about",
   },
 ];
 

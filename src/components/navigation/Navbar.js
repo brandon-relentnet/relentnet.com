@@ -2,6 +2,7 @@ import { navItemsData, accountItemsData } from "../../data/navbarData";
 import { UserIcon } from "@heroicons/react/24/solid";
 import NavbarClient from "./NavbarClient";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -61,14 +62,14 @@ export default function Navbar() {
                 ))}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">
+            <Link href="/" className="btn btn-ghost normal-case text-xl">
               <Image
                 src="/images/relentnet-logo.png"
                 alt="RelentNet Logo"
                 width={40}
                 height={40}
               />
-            </a>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 menu-lg">
