@@ -1,18 +1,10 @@
-"use client";
-
 import React from "react";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { servicesProvided } from "@/data/siteData";
-import { PlayIcon } from "@heroicons/react/24/solid";
+import ScrollButton from "../ScrollButton";
 
 const ServicesSection = () => {
-  const handleScrollTo = (elementId) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section id="services" className="relative py-section scroll-m-20">
@@ -28,7 +20,7 @@ const ServicesSection = () => {
           <p className="text-subtle max-w-[80ch] mx-auto text-base-content/80">
             We bring ideas to life with stunning websites, powerful apps, and
             strategic online growth. Whether you need a new digital home,
-            marketing that converts, or reliable hosting and support, we're here
+            marketing that converts, or reliable hosting and support, we&apos;re here
             to make it happen.
           </p>
         </div>
@@ -58,13 +50,9 @@ const ServicesSection = () => {
           })}
         </div>
         <div className="flex justify-center">
-          <button
-            className="group hover:scale-105 active:scale-95 transition-all duration-200 inline-block bg-gradient-to-r from-primary to-accent text-white px-6 py-3 text-lg rounded-xl tracking-widest font-semibold cursor-pointer"
-            onClick={() => handleScrollTo("forte")}
-          >
+          <ScrollButton targetId="forte">
             Why
-            <PlayIcon className="size-3 ml-2 -mt-0.5 inline-block group-hover:rotate-[90deg] transition-transform duration-200 text-white" />
-          </button>
+          </ScrollButton>
         </div>
       </div>
     </section>

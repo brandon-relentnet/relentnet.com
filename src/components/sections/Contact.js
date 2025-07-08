@@ -12,7 +12,7 @@ const ContactSection = () => {
             Contact
           </div>
           <h2 className="text-4xl md:text-5xl font-medium mb-6">
-            Enough talk, let's grow <span className="italic">together</span>.
+            Enough talk, let&apos;s grow <span className="italic">together</span>.
           </h2>
           <div className="flex justify-center">
             <Link

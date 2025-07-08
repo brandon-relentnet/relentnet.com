@@ -17,7 +17,7 @@ const ManageSection = () => {
               <span className="italic">Simplify</span> your online management.
             </h2>
             <p className="text-base-content/80 mb-12">
-              RelentNet's all-in-one website management platform simplifies your
+              RelentNet&apos;s all-in-one website management platform simplifies your
               digital operations, from design and development to hosting,
               updates, and ongoing support. From design and development to
               hosting and updates, we provide a seamless experience that puts

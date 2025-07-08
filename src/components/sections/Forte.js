@@ -1,16 +1,8 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { PlayIcon } from "@heroicons/react/24/solid";
+import ScrollButton from "../ScrollButton";
 
 const ForteSection = () => {
-  const handleScrollTo = (elementId) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section id="forte" className="relative bg-base-200 py-section">
@@ -37,21 +29,17 @@ const ForteSection = () => {
             <p className="text-base-content/80 mb-6">
               In a rapidly evolving digital landscape, RelentNet combines
               innovation, creativity, and technical expertise to deliver web
-              solutions that drive business growth. That's why we approach every
+              solutions that drive business growth. That&apos;s why we approach every
               project with relentless determination to deliver exceptional
               results. Our team of experts combines innovation, creativity, and
               technical prowess to provide you with web services that stand out
-              in the online world. With RelentNet, you're not just getting web
-              services; you're getting a partner committed to achieving
+              in the online world. With RelentNet, you&apos;re not just getting web
+              services; you&apos;re getting a partner committed to achieving
               relentless success for your online presence.
             </p>
-            <button
-              className="group hover:scale-105 active:scale-95 transition-all duration-200 inline-block bg-gradient-to-r from-primary to-accent text-white px-6 py-3 text-lg rounded-xl tracking-widest font-semibold cursor-pointer"
-              onClick={() => handleScrollTo("team-info")}
-            >
+            <ScrollButton targetId="team-info">
               Learn about us
-              <PlayIcon className="size-3 ml-2 -mt-0.5 inline-block group-hover:rotate-[90deg] transition-transform duration-200 text-white" />
-            </button>
+            </ScrollButton>
           </div>
         </div>
       </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { theDifferences } from "@/data/siteData";
@@ -47,7 +45,7 @@ const DifferenceSection = () => {
             you.
           </h2>
           <p className="text-base-content/80 max-w-[80ch] mb-4">
-            At RelentNet, we don't just design websites and provide hosting – we
+            At RelentNet, we don&apos;t just design websites and provide hosting – we
             cultivate lasting partnerships. In a digital landscape cluttered
             with faceless corporations, we stand out as a beacon of
             customer-centric commitment.
@@ -57,7 +55,7 @@ const DifferenceSection = () => {
             RelentNet, we build lasting partnerships. Our commitment extends
             beyond creating websites; we provide ongoing support to help your
             digital presence grow and thrive. Our journey with you extends far
-            beyond the transaction; it's a perpetual collaboration focused on
+            beyond the transaction; it&apos;s a perpetual collaboration focused on
             your success.
           </p>
           <div className="flex justify-center lg:justify-start">

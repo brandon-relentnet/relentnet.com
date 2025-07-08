@@ -1,18 +1,9 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { teamMembers } from "@/data/siteData";
-import { PlayIcon } from "@heroicons/react/24/solid";
+import ScrollButton from "../ScrollButton";
 
 const TeamSection = () => {
-  const handleScrollTo = (elementId) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="team-info" className="relative py-section scroll-m-20">
       <span className="bg-mask-right" />
@@ -57,13 +48,9 @@ const TeamSection = () => {
           ))}
         </div>
         <div className="flex justify-center">
-          <button
-            className="group hover:scale-105 active:scale-95 transition-all duration-200 inline-block bg-gradient-to-r from-primary to-accent text-white px-6 py-3 text-lg rounded-xl tracking-widest font-semibold cursor-pointer"
-            onClick={() => handleScrollTo("the-difference")}
-          >
+          <ScrollButton targetId="the-difference">
             <span className="italic">More</span> about us
-            <PlayIcon className="size-3 ml-2 -mt-0.5 inline-block group-hover:rotate-[90deg] transition-transform duration-200 text-white" />
-          </button>
+          </ScrollButton>
         </div>
       </div>
     </section>
