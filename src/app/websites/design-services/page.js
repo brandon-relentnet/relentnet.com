@@ -4,9 +4,12 @@ import PageHero from "@/components/PageHero";
 import Link from "next/link";
 import { AnimateNumber } from "motion-plus/react";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ScrollButton from "@/components/ScrollButton";
 import CustomButton from "@/components/CustomButton";
+import { BoltIcon, StarIcon } from "@heroicons/react/24/solid";
+import Accordion from "@/components/Accordian";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 const faqs = [
   {
@@ -94,10 +97,10 @@ const plans = [
 
 // Trust indicators
 const trustIndicators = [
-  { number: "40+", label: "Websites Launched" },
-  { number: "98%", label: "Client Satisfaction" },
-  { number: "5★", label: "Average Rating" },
-  { number: "3yr", label: "In Business" },
+  { number: 41, label: "Websites Launched" },
+  { number: 98, label: "Client Satisfaction" },
+  { number: 4.9, label: "Average Rating" },
+  { number: 3, label: "In Business" },
 ];
 
 const platformComparison = {
@@ -127,7 +130,11 @@ const platformComparison = {
 
 export default function WebsiteDesignServices() {
   const [isCustom, setIsCustom] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <>
       <PageHero
@@ -146,14 +153,29 @@ export default function WebsiteDesignServices() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {trustIndicators.map((indicator, i) => (
-              <div key={i} className="text-center">
-                <div className="text-3xl font-bold text-primary">
-                  {indicator.number}
+              <motion.div
+                key={i}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2, duration: 0.6 }}
+              >
+                <div className="mb-2 flex items-center justify-center text-4xl font-medium text-primary">
+                  <AnimateNumber
+                    style={trustNumberStyle}
+                    transition={{ duration: 2, delay: i * 0.3 }}
+                  >
+                    {mounted ? indicator.number : 0}
+                  </AnimateNumber>
+                  {indicator.label === "Websites Launched" && "+"}
+                  {indicator.label === "Client Satisfaction" && "%"}
+                  {indicator.label === "In Business" && " Years"}
+                  {indicator.label === "Average Rating" && (
+                    <StarIcon className="ml-1 inline-block size-6" />
+                  )}
                 </div>
-                <div className="text-sm text-base-content/70">
-                  {indicator.label}
-                </div>
-              </div>
+                <div className="text-sm text-slate-300">{indicator.label}</div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -319,8 +341,8 @@ export default function WebsiteDesignServices() {
       {/* Comparison Table */}
       <section className="relative bg-base-200 py-section">
         <span className="bg-mask-left" />
-        <div className="relative container mx-auto px-4">
-          <div className="mb-12 text-center">
+        <div className="relative container mx-auto px-4 py-block">
+          <div className="mb-8 text-center">
             <div className="section-subtitle">Still Deciding?</div>
             <h2 className="section-title">
               Choose the Right Platform for Your Business
@@ -386,7 +408,7 @@ export default function WebsiteDesignServices() {
       {/* Enterprise Section */}
       <section className="relative py-section">
         <span className="bg-mask-right" />
-        <div className="relative container mx-auto px-4 text-center">
+        <div className="relative container mx-auto px-4 py-block text-center">
           <div className="section-subtitle">Enterprise Solutions</div>
           <h2 className="section-title">Need Something Bigger?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-base-content/70">
@@ -398,43 +420,20 @@ export default function WebsiteDesignServices() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative bg-base-200 py-section">
-        <span className="bg-mask-left" />
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <div className="section-subtitle">Common Questions</div>
-            <h2 className="section-title">Everything You Need to Know</h2>
-          </div>
-
-          <div className="mx-auto grid max-w-4xl gap-4">
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="collapse-plus collapse bg-base-300 shadow-md"
-              >
-                <input type="radio" name="faq-accordion" />
-                <div className="collapse-title text-lg font-medium">
-                  {faq.question}
-                </div>
-                <div className="collapse-content">
-                  <p className="text-base-content/80">{faq.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SectionHeader
+        title="Frequently Asked Questions"
+        subtitle="Your Questions Answered"
+      >
+        {/* FAQ Accordion */}
+        <Accordion faqs={faqs} />
+      </SectionHeader>
 
       {/* Final CTA Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-section">
-        <div className="container mx-auto px-4 text-center">
-          <div className="mb-2 text-sm font-bold tracking-widest text-primary uppercase">
-            Let&apos;s Do This
-          </div>
-          <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-            Ready to Grow Your Business?
-          </h2>
-          <p className="mx-auto mb-8 max-w-xl text-lg text-base-content/80">
+        <div className="container mx-auto px-4 py-block text-center">
+          <div className="section-subtitle">Let&apos;s Do This</div>
+          <h2 className="section-title">Ready to Grow Your Business?</h2>
+          <p className="section-desc mb-6">
             Join 40+ businesses that trust us with their online presence.
             <br />
           </p>
@@ -448,7 +447,8 @@ export default function WebsiteDesignServices() {
             </ScrollButton>
           </div>
           <p className="mt-6 text-sm text-base-content/60">
-            ⚡ Average response time: 2 hours during business days
+            <BoltIcon className="inline-block size-4 text-accent/70" /> Average
+            response time: 2 hours during business days
           </p>
         </div>
       </section>
@@ -525,4 +525,10 @@ const StyleSheet = () => {
         }
     `}</style>
   );
+};
+
+const trustNumberStyle = {
+  fontSize: "inherit",
+  fontVariantNumeric: "tabular-nums",
+  fontWeight: "inherit",
 };
