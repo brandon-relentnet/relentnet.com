@@ -8,6 +8,11 @@ import {
   WrenchScrewdriverIcon,
   EyeIcon,
   HeartIcon,
+  ShoppingCartIcon,
+  CreditCardIcon,
+  TruckIcon,
+  DevicePhoneMobileIcon,
+  ShieldCheckIcon,
 } from "@heroicons/react/24/solid";
 
 // Services provided data
@@ -229,3 +234,121 @@ export const platformComparison = {
     ],
   },
 };
+
+// Online Store Data
+export const storeFeatures = [
+  {
+    icon: "ShoppingCartIcon",
+    title: "Advanced Shopping Cart",
+    description: "Smart cart with saved items, wishlists, and lightning-fast checkout process."
+  },
+  {
+    icon: "CreditCardIcon",
+    title: "Secure Payments",
+    description: "Accept all major payment methods with bank-level security and fraud protection."
+  },
+  {
+    icon: "TruckIcon",
+    title: "Shipping Made Easy",
+    description: "Real-time shipping rates, order tracking, and automated carrier integration."
+  },
+  {
+    icon: "ChartBarIcon",
+    title: "Sales Analytics",
+    description: "Track performance, monitor inventory, and understand customer behavior."
+  },
+  {
+    icon: "DevicePhoneMobileIcon",
+    title: "Mobile-First Design",
+    description: "Beautiful, responsive design that works perfectly on every device."
+  },
+  {
+    icon: "ShieldCheckIcon",
+    title: "Enterprise Security",
+    description: "SSL certificates, secure hosting, and regular backups included."
+  }
+];
+
+export const storePlans = [
+  {
+    name: "Starter",
+    price: "$29",
+    description: "Perfect for small businesses just getting started online",
+    features: [
+      "Up to 100 products",
+      "Basic themes & customization",
+      "Standard email support",
+      "2% transaction fee"
+    ]
+  },
+  {
+    name: "Professional",
+    price: "$79",
+    description: "Everything you need to grow your online business",
+    features: [
+      "Unlimited products",
+      "Premium themes & full customization",
+      "Priority phone & email support",
+      "1% transaction fee",
+      "Advanced analytics dashboard"
+    ],
+    popular: true
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "Tailored solutions for high-volume businesses",
+    features: [
+      "Custom features & integrations",
+      "Dedicated account manager",
+      "White-label options",
+      "No transaction fees",
+      "24/7 priority support"
+    ]
+  }
+];
+
+export const storeTestimonials = [
+  {
+    name: "Sarah Johnson",
+    business: "Boutique Fashion Store",
+    quote: "Sales increased 300% in just 3 months. The platform is incredibly easy to use and my customers love the smooth checkout process."
+  },
+  {
+    name: "Mike Chen",
+    business: "Electronics Retailer",
+    quote: "The inventory management features saved us countless hours. We can now focus on growing our business instead of managing technical details."
+  },
+  {
+    name: "Emily Rodriguez",
+    business: "Handmade Crafts",
+    quote: "I went from zero online presence to $50K in monthly sales. The support team helped me every step of the way."
+  }
+];
+
+export const storeFaqs = [
+  {
+    question: "How quickly can I set up my online store?",
+    answer: "Most stores are live within 24-48 hours! We'll handle the technical setup while you focus on adding your products and customizing your store's look."
+  },
+  {
+    question: "Do I need technical skills to manage my store?",
+    answer: "Not at all! Our platform is designed for business owners, not developers. Adding products, processing orders, and managing inventory is as simple as using social media."
+  },
+  {
+    question: "What payment methods can I accept?",
+    answer: "We support all major credit cards, PayPal, Apple Pay, Google Pay, and many regional payment options. Your customers can pay however they prefer."
+  },
+  {
+    question: "How much do transaction fees cost?",
+    answer: "Our Starter plan has a 2% transaction fee, Professional has 1%, and Enterprise customers pay no transaction fees. All plans include secure payment processing."
+  },
+  {
+    question: "Can I customize the design of my store?",
+    answer: "Absolutely! Choose from dozens of professional themes, or we can create a completely custom design that matches your brand perfectly."
+  },
+  {
+    question: "What if I need help with my store?",
+    answer: "Our support team is here to help! Starter customers get email support, Professional customers get priority phone support, and Enterprise customers have a dedicated account manager."
+  }
+];
