@@ -101,6 +101,16 @@
   );
 }
 
+.number-section-post {
+  font-size: 24px;
+  opacity: 0.5;
+  position: relative;
+  bottom: 15px;
+  align-self: flex-end;
+  margin-left: 5px;
+  letter-spacing: -0.02em;
+}
+
 .empower-text::before {
   content: "";
   position: absolute;

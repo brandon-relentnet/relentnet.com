@@ -117,7 +117,7 @@ export default function WebsiteDesignServices() {
         </div>
 
         {/* Pricing cards */}
-        <div className="mx-auto mb-12 grid max-w-5xl gap-8 md:grid-cols-3">
+        <div className="mx-auto mb-12 grid max-w-5xl gap-8 text-left md:grid-cols-3">
           {plans.map((plan, i) => (
             <div
               key={i}
@@ -282,10 +282,10 @@ export default function WebsiteDesignServices() {
 
       {/* Enterprise Section */}
       <SectionHeader
-        title="Enterprise Solutions"
+        title="Got a Big Project?"
         desc="Building something huge? Multiple languages? Thousands of products? We
           love a challenge. Let's chat about your custom project."
-        subtitle="Got a Big Project?"
+        subtitle="Enterprise Solutions"
       >
         <CustomButton href="/contact">Tell Us Your Ideas</CustomButton>
       </SectionHeader>

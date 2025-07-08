@@ -1,42 +1,17 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
 import ScrollButton from "@/components/ScrollButton";
-import Image from "next/image";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 export default function HeroSection() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  // Create parallax effect - image moves slower than scroll
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
   return (
-    <div ref={ref} className="relative overflow-hidden bg-primary">
-      <motion.div
+    <div className="relative overflow-hidden bg-primary">
+      <ParallaxBackground
+        src="/images/software-35.webp"
         className="absolute inset-0 z-1"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 1.2,
-          ease: [0.25, 0.46, 0.45, 0.94],
-        }}
-        style={{ y }}
-      >
-        <Image
-          src="/images/software-35.webp"
-          alt="Hero Background"
-          className="h-full w-full object-cover"
-          width={1920}
-          height={1080}
-          quality={80}
-          priority
-        />
-      </motion.div>
+        opacity=""
+      />
 
       <div className="radial-gradient relative z-10 hero min-h-[calc(100vh-5rem)] !bg-transparent">
         <div className="hero-content text-center">
