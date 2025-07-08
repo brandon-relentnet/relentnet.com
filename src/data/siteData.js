@@ -79,6 +79,13 @@ export const teamMembers = [
       "Our graphic designer, adding an artistic touch to your logos or banners. Her designs are visually appealing, ensuring a unique charm that resonates with your audience.",
     image: "/images/lindsey-delaune-pfp.webp",
   },
+  {
+    name: "Tristan Woods",
+    role: "Sales & Partnerships",
+    blurb:
+      "Driven sales professional with a passion for building genuine connections and delivering value through every conversation. With a strong presence and a people-first mindset, he turns clients into long-term partners.",
+    image: "/images/tristan-woods-pfp.webp",
+  },
 ];
 
 // The differences data
