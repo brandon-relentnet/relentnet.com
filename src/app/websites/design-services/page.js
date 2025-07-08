@@ -13,117 +13,117 @@ import SectionHeader from "@/components/sections/SectionHeader";
 
 const faqs = [
   {
-    question: "How quickly can my website be live?",
+    question: "How fast can I get my website?",
     answer:
-      "We can have your website live in as little as 2 weeks for Empower plans. Most clients are up and running within 3-4 weeks, depending on how quickly you can provide content and feedback.",
+      "Really fast! Empower sites go live in 2 weeks. Most websites are ready in 3-4 weeks. The quicker you send us your photos and text, the faster we can build.",
   },
   {
-    question: "Will I be able to update my website myself?",
+    question: "Can I update it myself? I'm not tech-savvy.",
     answer:
-      "Absolutely! We provide training with every package and build your site with easy-to-use tools. WordPress sites are especially user-friendly for content updates. We're always here to help if you need us.",
+      "Yes! We make it super easy. Think of it like updating Facebook - if you can post there, you can update your website. We'll show you exactly how, and we're always a call away if you get stuck.",
   },
   {
-    question: "What makes you different from DIY website builders?",
+    question: "Why not just use Wix or Squarespace?",
     answer:
-      "We create custom designs that make your business stand out, not cookie-cutter templates. Plus, we handle all the technical setup, SEO optimization, and ensure your site actually brings in customers - things that take months to learn on your own.",
+      "Those are like buying clothes off the rack - they work, but everyone looks the same. We create a website that's uniquely yours, plus we handle all the tricky stuff like making sure Google finds you and customers actually call.",
   },
   {
-    question: "Do I need to pay extra for hosting?",
+    question: "What about hosting? Is that included?",
     answer:
-      "Hosting is separate and typically costs $10-30/month for WordPress or $20-50/month for Next.js sites. We'll set everything up and recommend the best hosting for your needs.",
+      "Hosting is like rent for your website - it's a separate small monthly fee ($10-50 depending on your needs). We'll set it all up and pick the perfect host for you. No tech knowledge needed!",
   },
   {
-    question: "What if I'm not happy with the design?",
+    question: "What if I don't like how it looks?",
     answer:
-      "Your satisfaction is guaranteed. Each package includes multiple revision rounds, and we don't stop until you love your website. We've never had a client walk away unhappy.",
+      "We'll keep tweaking until you love it - that's our promise. You get multiple rounds of changes with every package. In 3 years, we've never had someone unhappy with their final site.",
   },
   {
-    question: "Can I see examples of your work?",
+    question: "Can I see what you've built before?",
     answer:
-      "Of course! Contact us for a personalized portfolio showcase featuring websites similar to what you're looking for. We have hundreds of happy clients across every industry.",
+      "Absolutely! Just reach out and we'll show you sites we've built for businesses like yours. We've created 40+ websites for everyone from plumbers to boutiques.",
   },
 ];
 
 const plans = [
   {
     name: "Empower",
-    tagline: "Get Online Fast",
+    tagline: "Perfect Start",
     builderPrice: 1299,
     customPrice: 2499,
-    description: "Start attracting customers with a professional website",
+    description: "Everything you need to look professional online",
     features: [
-      "Beautiful 6-page website that works on all devices",
-      "Get found on Google with local SEO",
-      "Contact forms that send leads to your email",
-      "Free updates for 30 days after launch",
-      "2-week turnaround time",
+      "6 stunning pages that look great everywhere",
+      "Show up when people search for you on Google",
+      "Get customer inquiries straight to your inbox",
+      "We'll fix any issues free for 30 days",
+      "Your site goes live in just 2 weeks",
     ],
-    bestFor: "Service businesses, consultants, startups",
+    bestFor: "New businesses ready to grow",
   },
   {
     name: "Amplify",
-    tagline: "Grow Your Business",
+    tagline: "Most Popular",
     builderPrice: 2799,
     customPrice: 4999,
-    description: "Everything you need to sell online and build your brand",
+    description: "Turn browsers into buyers with powerful features",
     features: [
-      "Stunning 10-page website with blog",
-      "Sell up to 50 products online",
-      "Collect emails & grow your audience",
-      "Instagram & Facebook integration",
-      "60 days of support + training included",
-      "3-week turnaround time",
+      "10 pages + blog to share your expertise",
+      "Sell products directly from your site",
+      "Build an email list on autopilot",
+      "Connect your social media seamlessly",
+      "2 months of support + personal training",
+      "Ready to launch in 3 weeks",
     ],
-    bestFor: "Growing businesses, online stores, content creators",
+    bestFor: "Businesses ready to scale up",
     popular: true,
   },
   {
     name: "Transform",
-    tagline: "Dominate Your Market",
+    tagline: "Maximum Impact",
     builderPrice: 4799,
     customPrice: 8999,
-    description: "Advanced features to stay ahead of your competition",
+    description: "The complete package for serious growth",
     features: [
-      "Premium 15-page website with all the bells & whistles",
-      "Unlimited products & advanced e-commerce",
-      "Book appointments & accept payments online",
-      "Live chat to convert more visitors",
-      "3 months of support + monthly performance reports",
-      "Priority 4-week delivery",
+      "15+ pages with every feature you could want",
+      "Sell unlimited products with pro tools",
+      "Let customers book and pay instantly",
+      "Chat with visitors in real-time",
+      "3 months support + monthly growth reports",
+      "VIP delivery in 4 weeks",
     ],
-    bestFor: "Established businesses ready to scale",
+    bestFor: "Established businesses going big",
   },
 ];
 
 // Trust indicators
 const trustIndicators = [
-  { number: 41, label: "Websites Launched" },
-  { number: 98, label: "Client Satisfaction" },
-  { number: 4.9, label: "Average Rating" },
-  { number: 3, label: "In Business" },
+  { number: 41, label: "Happy Businesses" },
+  { number: 98, label: "Love Their Sites" },
+  { number: 4.9, label: "Star Reviews" },
+  { number: 3, label: "Years Growing" },
 ];
 
 const platformComparison = {
   wordpress: {
     title: "WordPress",
-    subtitle: "Best for Most Businesses",
+    subtitle: "Your Smart Choice",
     benefits: [
-      "Save money with affordable hosting",
-      "Update content without calling us",
-      "Add features easily as you grow",
-      "Perfect for blogs & online stores",
-      "Trusted by 40% of all websites",
+      "Costs less to run each month",
+      "Edit your site as easy as typing an email",
+      "Add new features with one click",
+      "Great for selling products & blogging",
+      "Powers millions of successful sites",
     ],
   },
   nextjs: {
     title: "Next.js",
-    subtitle: "When Speed Matters Most",
+    subtitle: "Premium Performance",
     benefits: [
-      "3x faster page loads than competitors",
-      "Handle massive traffic without crashing",
-      "Better Google rankings with superior SEO",
-      "Modern features your customers will love",
-      "Future-proof technology investment",
+      "Lightning fast - your visitors won't wait",
+      "Handles Black Friday traffic with ease",
+      "Google loves these sites (better rankings!)",
+      "Cutting-edge features that wow customers",
+      "Built to last for years to come",
     ],
   },
 };
@@ -140,11 +140,11 @@ export default function WebsiteDesignServices() {
       <PageHero
         title={
           <>
-            Websites that <span className="italic">get results</span>.
+            Websites that <span className="italic">just work</span>.
           </>
         }
-        subtitle="Custom Web Design"
-        description="Stop losing customers to your competition. Get a website that turns visitors into buyers."
+        subtitle="Simple, Beautiful Web Design"
+        description="Get a stunning website that's easy to manage. No tech degree required."
         button={{ label: "See Pricing", target: "website-plans" }}
       />
 
@@ -167,10 +167,10 @@ export default function WebsiteDesignServices() {
                   >
                     {mounted ? indicator.number : 0}
                   </AnimateNumber>
-                  {indicator.label === "Websites Launched" && "+"}
-                  {indicator.label === "Client Satisfaction" && "%"}
-                  {indicator.label === "In Business" && " Years"}
-                  {indicator.label === "Average Rating" && (
+                  {indicator.label === "Happy Businesses" && "+"}
+                  {indicator.label === "Love Their Sites" && "%"}
+                  {indicator.label === "Years Growing" && ""}
+                  {indicator.label === "Star Reviews" && (
                     <StarIcon className="ml-1 inline-block size-6" />
                   )}
                 </div>
@@ -189,11 +189,11 @@ export default function WebsiteDesignServices() {
             <div className="mb-8">
               <div className="section-subtitle">Plans</div>
               <h2 className="section-title">
-                Simple Pricing. <span className="italic">No Surprises</span>.
+                Clear Pricing. <span className="italic">Real Results</span>.
               </h2>
               <p className="section-desc">
-                One-time payment. No hidden fees. Just a beautiful website that
-                grows your business.
+                Pick your package. Get your website. Start attracting customers.
+                It&apos;s that simple.
               </p>
             </div>
 
@@ -218,16 +218,14 @@ export default function WebsiteDesignServices() {
                 {isCustom ? (
                   <>
                     <span className="font-semibold text-primary">Next.js</span>{" "}
-                    = Lightning fast, premium experience (recommended for
-                    high-traffic sites)
+                    = Super fast, premium feel (perfect for busy sites)
                   </>
                 ) : (
                   <>
                     <span className="font-semibold text-primary">
                       WordPress
                     </span>{" "}
-                    = Easy to manage, budget-friendly (recommended for most
-                    businesses)
+                    = Simple to use, great value (our top pick for most)
                   </>
                 )}
               </p>
@@ -325,13 +323,13 @@ export default function WebsiteDesignServices() {
           <div className="mt-16 text-center">
             <p className="mx-auto max-w-3xl text-base-content/60">
               <span className="font-semibold text-base-content">
-                All plans include:
+                Every package includes:
               </span>{" "}
-              Custom design (no templates), mobile optimization, basic training,
-              and source files.
+              Your own unique design (no templates!), looks great on phones,
+              easy training, and all the files are yours.
               <span className="font-medium text-primary">
                 {" "}
-                Save 5% when you pay in full upfront.
+                Pay in full and save 5%.
               </span>
             </p>
           </div>
@@ -345,7 +343,7 @@ export default function WebsiteDesignServices() {
           <div className="mb-8 text-center">
             <div className="section-subtitle">Still Deciding?</div>
             <h2 className="section-title">
-              Choose the Right Platform for Your Business
+              Which Platform Is <span className="italic">Right for You</span>?
             </h2>
           </div>
 
@@ -353,7 +351,7 @@ export default function WebsiteDesignServices() {
             <div className="card bg-base-300 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
               <div className="mb-4 text-center">
                 <span className="inline-block rounded-full bg-primary/20 px-3 py-1 text-sm font-semibold text-primary">
-                  Recommended for 80% of businesses
+                  Best choice for most businesses
                 </span>
               </div>
               <h3 className="mb-2 text-center text-2xl font-bold">
@@ -374,7 +372,7 @@ export default function WebsiteDesignServices() {
             <div className="card bg-base-300 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
               <div className="mb-4 text-center">
                 <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-sm font-semibold text-accent">
-                  For high-performance needs
+                  When every second counts
                 </span>
               </div>
               <h3 className="mb-2 text-center text-2xl font-bold">
@@ -396,11 +394,10 @@ export default function WebsiteDesignServices() {
 
           <div className="mb-12 text-center">
             <p className="text-base-content/60">
-              <span className="font-semibold">Not sure which to choose?</span>{" "}
-              Most businesses do great with WordPress.
+              <span className="font-semibold">Still confused?</span> Don&apos;t
+              worry! We&apos;ll pick the perfect one for you.
               <br />
-              We&apos;ll recommend the best option during your free
-              consultation.
+              Most of our clients love WordPress - it just works.
             </p>
           </div>
         </div>
@@ -411,12 +408,14 @@ export default function WebsiteDesignServices() {
         <span className="bg-mask-right" />
         <div className="relative container mx-auto px-4 py-block text-center">
           <div className="section-subtitle">Enterprise Solutions</div>
-          <h2 className="section-title">Need Something Bigger?</h2>
+          <h2 className="section-title">
+            Got a <span className="italic">Big Project</span>?
+          </h2>
           <p className="mx-auto mb-8 max-w-2xl text-base-content/70">
-            Custom quotes available for complex projects, multi-language sites,
-            and enterprise applications starting at $15,000.
+            Building something huge? Multiple languages? Thousands of products?
+            We love a challenge. Let&apos;s chat about your custom project.
           </p>
-          <CustomButton href="/contact">Let&apos;s Talk</CustomButton>
+          <CustomButton href="/contact">Tell Us Your Ideas</CustomButton>
         </div>
       </section>
 
@@ -433,23 +432,27 @@ export default function WebsiteDesignServices() {
       <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-section">
         <div className="container mx-auto px-4 py-block text-center">
           <div className="section-subtitle">Let&apos;s Do This</div>
-          <h2 className="section-title">Ready to Grow Your Business?</h2>
+          <h2 className="section-title">
+            Ready for a Website that{" "}
+            <span className="italic">Actually Works</span>?
+          </h2>
           <p className="section-desc mb-6">
-            Join 40+ businesses that trust us with their online presence.
+            Join 40+ happy businesses who finally have websites they&apos;re
+            proud of.
             <br />
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <CustomButton href="/contact" gradient={false}>
-              Get My Free Consultation
+              Start My Website Today
             </CustomButton>
             <span className="text-base-content/60">or</span>
             <ScrollButton targetId="website-plans" up={true}>
-              View Pricing Again
+              Check Prices Again
             </ScrollButton>
           </div>
           <p className="mt-6 text-sm text-base-content/60">
-            <BoltIcon className="inline-block size-4 text-accent/70" /> Average
-            response time: 2 hours during business days
+            <BoltIcon className="inline-block size-4 text-accent/70" /> We
+            usually reply within 2 hours (during business hours)
           </p>
         </div>
       </section>
