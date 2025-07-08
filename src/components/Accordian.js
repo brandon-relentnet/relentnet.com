@@ -69,7 +69,7 @@ export default function Accordion({ faqs, className = "" }) {
   return (
     <>
       <div
-        className={`accordion card relative mx-auto max-w-3xl bg-base-300 shadow-md ${className}`}
+        className={`accordion card relative mx-auto max-w-3xl bg-base-300 text-left shadow-md ${className}`}
       >
         {faqs.map((faq, i) => (
           <Item key={i} header={faq.question}>

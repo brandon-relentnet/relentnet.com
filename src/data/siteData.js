@@ -112,3 +112,120 @@ export const theDifferences = [
     icon: HeartIcon,
   },
 ];
+
+export const faqs = [
+  {
+    question: "How fast can I get my website?",
+    answer:
+      "Really fast! Empower sites go live in 2 weeks. Most websites are ready in 3-4 weeks. The quicker you send us your photos and text, the faster we can build.",
+  },
+  {
+    question: "Can I update it myself? I'm not tech-savvy.",
+    answer:
+      "Yes! We make it super easy. Think of it like updating Facebook - if you can post there, you can update your website. We'll show you exactly how, and we're always a call away if you get stuck.",
+  },
+  {
+    question: "Why not just use Wix or Squarespace?",
+    answer:
+      "Those are like buying clothes off the rack - they work, but everyone looks the same. We create a website that's uniquely yours, plus we handle all the tricky stuff like making sure Google finds you and customers actually call.",
+  },
+  {
+    question: "What about hosting? Is that included?",
+    answer:
+      "Hosting is like rent for your website - it's a separate small monthly fee ($10-50 depending on your needs). We'll set it all up and pick the perfect host for you. No tech knowledge needed!",
+  },
+  {
+    question: "What if I don't like how it looks?",
+    answer:
+      "We'll keep tweaking until you love it - that's our promise. You get multiple rounds of changes with every package. In 3 years, we've never had someone unhappy with their final site.",
+  },
+  {
+    question: "Can I see what you've built before?",
+    answer:
+      "Absolutely! Just reach out and we'll show you sites we've built for businesses like yours. We've created 40+ websites for everyone from plumbers to boutiques.",
+  },
+];
+
+export const plans = [
+  {
+    name: "Empower",
+    tagline: "Perfect Start",
+    builderPrice: 1299,
+    customPrice: 2499,
+    description: "Everything you need to look professional online",
+    features: [
+      "6 stunning pages that look great everywhere",
+      "Show up when people search for you on Google",
+      "Get customer inquiries straight to your inbox",
+      "We'll fix any issues free for 30 days",
+      "Your site goes live in just 2 weeks",
+    ],
+    bestFor: "New businesses ready to grow",
+  },
+  {
+    name: "Amplify",
+    tagline: "Most Popular",
+    builderPrice: 2799,
+    customPrice: 4999,
+    description: "Turn browsers into buyers with powerful features",
+    features: [
+      "10 pages + blog to share your expertise",
+      "Sell products directly from your site",
+      "Build an email list on autopilot",
+      "Connect your social media seamlessly",
+      "2 months of support + personal training",
+      "Ready to launch in 3 weeks",
+    ],
+    bestFor: "Businesses ready to scale up",
+    popular: true,
+  },
+  {
+    name: "Transform",
+    tagline: "Maximum Impact",
+    builderPrice: 4799,
+    customPrice: 8999,
+    description: "The complete package for serious growth",
+    features: [
+      "15+ pages with every feature you could want",
+      "Sell unlimited products with pro tools",
+      "Let customers book and pay instantly",
+      "Chat with visitors in real-time",
+      "3 months support + monthly growth reports",
+      "VIP delivery in 4 weeks",
+    ],
+    bestFor: "Established businesses going big",
+  },
+];
+
+// Trust indicators
+export const trustIndicators = [
+  { number: 41, label: "Happy Businesses" },
+  { number: 98, label: "Love Their Sites" },
+  { number: 4.9, label: "Star Reviews" },
+  { number: 3, label: "Years Growing" },
+];
+
+export const platformComparison = {
+  wordpress: {
+    title: "WordPress",
+    subtitle: "Your Smart Choice",
+    benefits: [
+      "Costs less to run each month",
+      "Edit your site as easy as typing an email",
+      "Add new features with one click",
+      "Great for selling products & blogging",
+      "Powers millions of successful sites",
+    ],
+  },
+  nextjs: {
+    title: "Next.js",
+    subtitle: "Premium Performance",
+    benefits: [
+      "Lightning fast - your visitors won't wait",
+      "Handles Black Friday traffic with ease",
+      "Google loves these sites (better rankings!)",
+      "Cutting-edge features that wow customers",
+      "Built to last for years to come",
+    ],
+  },
+};
