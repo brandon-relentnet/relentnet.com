@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
 import Link from "next/link";
+import { AnimateNumber } from "motion-plus/react";
 import SectionHeader from "@/components/sections/SectionHeader";
 
 export default function VPSPlans({ plans }) {
@@ -14,103 +14,140 @@ export default function VPSPlans({ plans }) {
       }
       subtitle="VPS Specifications"
       desc="Choose the exact resources you need. All plans include full root access, instant scaling, and enterprise-grade infrastructure."
-      maskLeft={true}
       id="vps-plans"
-      className="bg-base-200"
     >
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="mx-auto mb-12 grid max-w-7xl gap-8 text-left md:grid-cols-2 lg:grid-cols-4">
         {plans.map((plan, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
-            className={`card bg-base-100 shadow-lg ${
-              plan.popular ? 'border-2 border-primary scale-105' : 'border-2 border-transparent'
-            } hover:shadow-accent/30 transition duration-250 p-6 relative`}
-          >
-            {plan.popular && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
-                Most Popular
-              </div>
-            )}
-            
-            <div className="mb-1 text-xs font-semibold tracking-wider text-accent uppercase">
-              {plan.tagline}
-            </div>
-            <h3 className="text-xl font-medium mb-4">{plan.name}</h3>
-            
-            {/* Technical specs prominently displayed */}
-            <div className="mb-6 space-y-3">
-              <div className="flex justify-between items-center py-2 border-b border-base-300">
-                <span className="text-sm text-base-content/70">CPU</span>
-                <span className="font-mono text-sm">{plan.cpu}</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-base-300">
-                <span className="text-sm text-base-content/70">RAM</span>
-                <span className="font-mono text-sm">{plan.ram}</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-base-300">
-                <span className="text-sm text-base-content/70">Storage</span>
-                <span className="font-mono text-sm">{plan.storage}</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-base-300">
-                <span className="text-sm text-base-content/70">Bandwidth</span>
-                <span className="font-mono text-sm">{plan.bandwidth}</span>
-              </div>
-            </div>
-
-            <div className="text-center mb-4">
-              <div className="text-3xl font-bold mb-1">
-                ${plan.monthlyPrice}
-                <span className="text-lg font-normal text-base-content/80">/mo</span>
-              </div>
-              <p className="text-xs text-base-content/70">{plan.description}</p>
-            </div>
-            
-            <ul className="space-y-2 mb-6 text-sm">
-              {plan.features.slice(0, 4).map((feature, j) => (
-                <li key={j} className="flex items-start gap-2">
-                  <div className="size-4 bg-primary/20 text-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs">
-                    ✓
-                  </div>
-                  <span className="text-base-content/80 text-xs">{feature}</span>
-                </li>
-              ))}
-              {plan.features.length > 4 && (
-                <li className="text-xs text-accent">+ {plan.features.length - 4} more features</li>
-              )}
-            </ul>
-
-            <div className="mb-4 rounded-lg bg-base-300/50 p-3">
-              <p className="text-xs text-base-content/70">
-                <span className="font-semibold">Ideal for:</span> {plan.bestFor}
-              </p>
-            </div>
-            
-            <Link
-              href="/contact"
-              className={`block text-center px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105 active:scale-95 ${
-                plan.popular 
-                  ? 'bg-gradient-to-r from-primary to-accent text-white' 
-                  : 'bg-base-300 hover:bg-base-300/70'
-              }`}
-            >
-              Deploy Now
-            </Link>
-          </motion.div>
+          <VPSPricingCard key={i} plan={plan} />
         ))}
       </div>
 
-      {/* Configuration options */}
+      {/* Value proposition section */}
       <div className="mt-16 text-center">
-        <div className="inline-flex flex-wrap items-center justify-center gap-4 bg-primary/10 text-primary px-6 py-4 rounded-full">
-          <span className="text-2xl">⚡</span>
-          <span className="font-semibold text-sm">
-            Custom configurations available • Root access included • Instant scaling
+        <p className="mx-auto max-w-3xl text-base-content/60">
+          <span className="font-semibold text-base-content">
+            All VPS plans include:
+          </span>{" "}
+          Full root access, instant scaling, DDoS protection, 99.9% uptime SLA, and choice of operating systems.
+          <span className="font-medium text-primary">
+            {" "}
+            Deploy in under 30 seconds.
           </span>
-        </div>
+        </p>
       </div>
     </SectionHeader>
+  );
+}
+
+function VPSPricingCard({ plan }) {
+  return (
+    <div
+      className={`card bg-base-300 shadow-lg ${
+        plan.popular
+          ? "scale-105 border-2 border-primary hover:shadow-primary/30"
+          : "border-2 border-transparent hover:border-accent/30 hover:shadow-accent/30"
+      } relative p-8 transition duration-200`}
+    >
+      {plan.popular && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-semibold text-primary-content">
+          Most Popular
+        </div>
+      )}
+      <div className="mb-1 text-xs font-semibold tracking-wider text-accent uppercase">
+        {plan.tagline}
+      </div>
+      <h3 className="mb-2 text-2xl font-bold">{plan.name}</h3>
+      <p className="mb-4 text-sm text-base-content/70">
+        {plan.description}
+      </p>
+
+      <div className="mb-6">
+        <div className="flex items-baseline gap-2">
+          <AnimateNumber
+            format={{
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            }}
+            locales="en-US"
+            className="text-5xl font-bold tracking-tighter"
+            transition={{
+              visualDuration: 0.6,
+              type: "spring",
+              bounce: 0.25,
+              opacity: { duration: 0.2, ease: "linear" },
+            }}
+          >
+            {plan.monthlyPrice}
+          </AnimateNumber>
+          <span className="text-lg font-normal text-base-content/80">/mo</span>
+        </div>
+      </div>
+
+      {/* Technical specs section */}
+      <div className="mb-6">
+        <div className="mb-3 text-xs font-semibold tracking-wider text-primary uppercase">
+          Server Specs:
+        </div>
+        <div className="space-y-3 bg-base-100/50 p-3 rounded-lg">
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-base-content/70">CPU</span>
+            <span className="font-mono text-sm font-medium">{plan.cpu}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-base-content/70">RAM</span>
+            <span className="font-mono text-sm font-medium">{plan.ram}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-base-content/70">Storage</span>
+            <span className="font-mono text-sm font-medium">{plan.storage}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-base-content/70">Bandwidth</span>
+            <span className="font-mono text-sm font-medium">{plan.bandwidth}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <div className="mb-3 text-xs font-semibold tracking-wider text-primary uppercase">
+          What You Get:
+        </div>
+        <ul className="space-y-3">
+          {plan.features.slice(0, 5).map((feature, j) => (
+            <li key={j} className="flex items-start gap-2">
+              <div className="mt-0.5 flex size-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                ✓
+              </div>
+              <span className="text-sm text-base-content/80">
+                {feature}
+              </span>
+            </li>
+          ))}
+          {plan.features.length > 5 && (
+            <li className="text-sm text-accent">+ {plan.features.length - 5} more features</li>
+          )}
+        </ul>
+      </div>
+
+      <div className="mb-6 rounded-lg bg-base-100/50 p-3">
+        <p className="text-xs text-base-content/70">
+          <span className="font-semibold">Best for:</span>{" "}
+          {plan.bestFor}
+        </p>
+      </div>
+
+      <Link
+        href="/contact"
+        className={`block rounded-xl px-6 py-3 text-center font-semibold transition-all duration-200 hover:scale-105 active:scale-95 ${
+          plan.popular
+            ? "bg-gradient-to-r from-primary to-accent text-white"
+            : "bg-base-100 hover:bg-base-100/70"
+        }`}
+      >
+        Deploy Now
+      </Link>
+    </div>
   );
 }

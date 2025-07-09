@@ -1,41 +1,51 @@
 "use client";
 
 import { motion } from "motion/react";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 export default function WordPressTestimonials({ testimonials }) {
   return (
-    <section className="relative py-section">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-medium mb-6">
-            What Our <span className="italic">Customers</span> Say
-          </h2>
-          <p className="text-base-content/80 max-w-[60ch] mx-auto">
-            Join thousands of WordPress users who trust RelentNet for their hosting needs.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="card bg-base-300 shadow-md hover:shadow-accent/30 transition duration-250 p-6"
-            >
-              <div className="text-primary text-2xl mb-4">"</div>
-              <p className="text-base-content/80 mb-6 italic">
-                {testimonial.quote}
-              </p>
-              <div className="border-t border-base-content/20 pt-4">
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-sm text-base-content/70">{testimonial.business}</p>
+    <SectionHeader
+      title={
+        <>
+          What Our <span className="italic">WordPress Users</span> Say
+        </>
+      }
+      subtitle="Performance Stories"
+      desc="Real WordPress sites, real performance improvements. See how our hosting made the difference."
+    >
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((testimonial, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1, duration: 0.6 }}
+            className="card bg-base-300 shadow-md p-6"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <div className="size-8 bg-primary/20 rounded-full flex items-center justify-center">
+                <span className="text-primary text-lg">⚡</span>
               </div>
-            </motion.div>
-          ))}
-        </div>
+              <span className="text-sm font-medium text-primary">WordPress Optimized</span>
+            </div>
+            <p className="text-base-content/80 mb-4 italic">
+              &quot;{testimonial.quote}&quot;
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="size-10 bg-primary/20 rounded-full flex items-center justify-center">
+                <span className="text-primary font-semibold">
+                  {testimonial.name.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <div className="font-semibold">{testimonial.name}</div>
+                <div className="text-sm text-base-content/60">{testimonial.business}</div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </SectionHeader>
   );
 }

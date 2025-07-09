@@ -143,7 +143,7 @@ export default function BuilderPlans({ plans }) {
 
             <div className="mb-6">
               <div className="mb-3 text-xs font-semibold tracking-wider text-primary uppercase">
-                What's Included:
+                What&apos;s Included:
               </div>
               <ul className="space-y-3">
                 {plan.features.map((feature, j) => (

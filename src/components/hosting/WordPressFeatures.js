@@ -24,8 +24,10 @@ export default function WordPressFeatures({ features }) {
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, i) => (
-          <div key={i} className="card bg-base-300 shadow-md hover:shadow-accent/30 card-border border-base-300 hover:border-accent/30 transition duration-250 p-6">
-            <div className="text-4xl mb-4">{iconMap[feature.icon]}</div>
+          <div key={i} className="card bg-base-300 shadow-md p-6 text-center">
+            <div className="size-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-3xl">
+              {iconMap[feature.icon]}
+            </div>
             <h3 className="text-xl font-medium mb-3">{feature.title}</h3>
             <p className="text-base-content/80">{feature.description}</p>
           </div>

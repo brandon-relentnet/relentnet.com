@@ -22,14 +22,14 @@ export default function VPSFeatures({ features }) {
       maskRight={true}
       id="vps-features"
     >
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, i) => (
-          <div key={i} className="group">
-            <div className="size-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300">
+          <div key={i} className="card bg-base-300 shadow-md p-6 text-center">
+            <div className="size-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-3xl">
               {iconMap[feature.icon]}
             </div>
-            <h3 className="text-xl font-medium mb-4 text-center">{feature.title}</h3>
-            <p className="text-base-content/80 text-center leading-relaxed">{feature.description}</p>
+            <h3 className="text-xl font-medium mb-3">{feature.title}</h3>
+            <p className="text-base-content/80">{feature.description}</p>
           </div>
         ))}
       </div>
