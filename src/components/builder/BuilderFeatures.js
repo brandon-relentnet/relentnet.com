@@ -1,35 +1,35 @@
 "use client";
 
-import { motion, stagger } from "motion/react";
-import {
-  ShoppingCartIcon,
-  CreditCardIcon,
-  TruckIcon,
-  ChartBarIcon,
-  DevicePhoneMobileIcon,
-  ShieldCheckIcon,
+import { motion } from "motion/react";
+import { 
+  CursorArrowRaysIcon,
+  CubeTransparentIcon,
+  SparklesIcon,
+  WrenchIcon,
+  DocumentDuplicateIcon,
+  AcademicCapIcon
 } from "@heroicons/react/24/solid";
 import SectionHeader from "@/components/sections/SectionHeader";
 
 const iconMap = {
-  ShoppingCartIcon,
-  CreditCardIcon,
-  TruckIcon,
-  ChartBarIcon,
-  DevicePhoneMobileIcon,
-  ShieldCheckIcon,
+  CursorArrowRaysIcon,
+  CubeTransparentIcon,
+  SparklesIcon,
+  WrenchIcon,
+  DocumentDuplicateIcon,
+  AcademicCapIcon
 };
 
-export default function StoreFeatures({ features }) {
+export default function BuilderFeatures({ features }) {
   return (
     <SectionHeader
       title={
         <>
-          Everything You Need to <span className="italic">Sell Online</span>
+          Everything You Need to Build <span className="italic">Amazing</span> Websites
         </>
       }
-      subtitle="Complete E-commerce Solution"
-      desc="Our e-commerce platform comes packed with powerful features to help you manage products, process orders, and grow your online business."
+      subtitle="DIY Website Builder"
+      desc="Get access to professional tools, templates, and training to build stunning websites yourself using Divi and Elementor."
     >
       <div className="grid gap-6 text-left md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, i) => {
@@ -39,7 +39,7 @@ export default function StoreFeatures({ features }) {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
               className="card border-2 border-base-300 bg-base-300 p-6 shadow-md transition duration-250 hover:border-accent/30 hover:shadow-accent/30"
             >
               <div className="justify-left mb-4 flex items-center gap-x-4">
