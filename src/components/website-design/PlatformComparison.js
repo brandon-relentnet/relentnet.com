@@ -11,7 +11,7 @@ export default function PlatformComparison({ comparison }) {
         <div className="card bg-base-300 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
           <div className="mb-4 text-center">
             <span className="inline-block rounded-full bg-primary/20 px-3 py-1 text-sm font-semibold text-primary">
-              Best choice for most businesses
+              Perfect for content creators
             </span>
           </div>
           <h3 className="mb-2 text-center text-2xl font-bold">
@@ -32,7 +32,7 @@ export default function PlatformComparison({ comparison }) {
         <div className="card bg-base-300 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
           <div className="mb-4 text-center">
             <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-sm font-semibold text-accent">
-              When every second counts
+              Built for performance & beauty
             </span>
           </div>
           <h3 className="mb-2 text-center text-2xl font-bold">
@@ -54,10 +54,9 @@ export default function PlatformComparison({ comparison }) {
 
       <div className="mb-12 text-center">
         <p className="text-base-content/60">
-          <span className="font-semibold">Still confused?</span> Don&apos;t
-          worry! We&apos;ll pick the perfect one for you.
+          <span className="font-semibold">Not sure which to choose?</span> No problem!
           <br />
-          Most of our clients love WordPress - it just works.
+          We&apos;ll recommend the perfect platform based on your specific needs and goals.
         </p>
       </div>
     </SectionHeader>

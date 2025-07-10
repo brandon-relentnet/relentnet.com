@@ -29,12 +29,12 @@ export default function PricingSection({ plans }) {
             {isCustom ? (
               <>
                 <span className="font-semibold text-primary">Next.js</span> =
-                Super fast, premium feel (perfect for busy sites)
+                Lightning fast, custom coded, perfect for unique visions
               </>
             ) : (
               <>
                 <span className="font-semibold text-primary">WordPress</span>{" "}
-                = Simple to use, great value (our top pick for most)
+                = Easy to manage, flexible, ideal for content & commerce
               </>
             )}
           </p>

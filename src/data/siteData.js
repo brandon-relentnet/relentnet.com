@@ -164,6 +164,11 @@ export const faqs = [
     answer:
       "Absolutely! Just reach out and we'll show you sites we've built for businesses like yours. We've created 40+ websites for everyone from plumbers to boutiques.",
   },
+  {
+    question: "What if I need to sell products online?",
+    answer:
+      "We have a dedicated e-commerce solution! Check out our Online Store packages which include everything you need: product management, secure payments, shipping integration, and more. It's built specifically for selling online.",
+  },
 ];
 
 export const plans = [
@@ -174,29 +179,28 @@ export const plans = [
     customPrice: 2499,
     description: "Everything you need to look professional online",
     features: [
-      "6 stunning pages that look great everywhere",
-      "Show up when people search for you on Google",
-      "Get customer inquiries straight to your inbox",
-      "We'll fix any issues free for 30 days",
-      "Your site goes live in just 2 weeks",
+      "Up to 5 pages custom designed",
+      "Mobile-responsive design",
+      "Contact forms & lead capture",
+      "Google Business integration",
+      "30 days of support",
     ],
-    bestFor: "New businesses ready to grow",
+    bestFor: "Startups & local businesses",
   },
   {
     name: "Amplify",
     tagline: "Most Popular",
     builderPrice: 2799,
     customPrice: 4999,
-    description: "Turn browsers into buyers with powerful features",
+    description: "Engage visitors and convert them into customers",
     features: [
-      "10 pages + blog to share your expertise",
-      "Sell products directly from your site",
-      "Build an email list on autopilot",
-      "Connect your social media seamlessly",
-      "2 months of support + personal training",
-      "Ready to launch in 3 weeks",
+      "Up to 10 pages + blog",
+      "Advanced animations & interactions",
+      "Newsletter & email capture",
+      "Social media integration",
+      "60 days support + training",
     ],
-    bestFor: "Businesses ready to scale up",
+    bestFor: "Growing businesses & brands",
     popular: true,
   },
   {
@@ -204,16 +208,15 @@ export const plans = [
     tagline: "Maximum Impact",
     builderPrice: 4799,
     customPrice: 8999,
-    description: "The complete package for serious growth",
+    description: "Complete digital presence for industry leaders",
     features: [
-      "15+ pages with every feature you could want",
-      "Sell unlimited products with pro tools",
-      "Let customers book and pay instantly",
-      "Chat with visitors in real-time",
-      "3 months support + monthly growth reports",
-      "VIP delivery in 4 weeks",
+      "Unlimited pages & content",
+      "Custom functionality & integrations",
+      "Member portals & gated content",
+      "Analytics & conversion tracking",
+      "90 days priority support",
     ],
-    bestFor: "Established businesses going big",
+    bestFor: "Enterprises & established brands",
   },
 ];
 
@@ -228,24 +231,24 @@ export const trustIndicators = [
 export const platformComparison = {
   wordpress: {
     title: "WordPress",
-    subtitle: "Your Smart Choice",
+    subtitle: "Content Freedom",
     benefits: [
-      "Costs less to run each month",
-      "Edit your site as easy as typing an email",
-      "Add new features with one click",
-      "Great for selling products & blogging",
-      "Powers millions of successful sites",
+      "Update your content anytime, anywhere",
+      "Add blog posts, products, and pages yourself",
+      "Thousands of plugins for new features",
+      "Perfect for growing & changing businesses",
+      "Lower monthly hosting costs",
     ],
   },
   nextjs: {
     title: "Next.js",
-    subtitle: "Premium Performance",
+    subtitle: "Custom Excellence",
     benefits: [
-      "Lightning fast - your visitors won't wait",
-      "Handles Black Friday traffic with ease",
-      "Google loves these sites (better rankings!)",
-      "Cutting-edge features that wow customers",
-      "Built to last for years to come",
+      "Lightning-fast load times that impress",
+      "Custom-coded to match your exact vision",
+      "Superior Google rankings & SEO performance",
+      "Scales effortlessly as you grow",
+      "Modern, secure, and future-proof",
     ],
   },
 };

@@ -21,8 +21,8 @@ export default function WebsiteDesignServices() {
             Websites that <span className="italic">just work</span>.
           </>
         }
-        subtitle="Simple, Beautiful Web Design"
-        description="Get a stunning website that's easy to manage. No tech degree required."
+        subtitle="Custom Web Design"
+        description="Professional websites tailored to your brand. We handle the technical stuff, you focus on growing."
         button={{ label: "See Pricing", target: "website-plans" }}
       />
 
