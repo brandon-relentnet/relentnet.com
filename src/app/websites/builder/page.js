@@ -25,14 +25,14 @@ export default function WebsiteBuilder() {
         button={{ label: "See Plans", target: "builder-plans" }}
       />
 
-      <BuilderFeatures features={builderFeatures} />
-      
+      <BuilderFeatures />
+
       <BuilderPlans plans={builderPlans} />
-      
+
       <BuilderTemplates templates={builderTemplates} />
-      
+
       <BuilderFAQ faqs={builderFaqs} />
-      
+
       <BuilderCTA />
     </>
   );

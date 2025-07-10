@@ -1,58 +1,34 @@
 import React from "react";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
 import { servicesProvided } from "@/data/siteData";
 import ScrollButton from "../ScrollButton";
+import AnimatedCards from "../AnimatedCards";
 
 const ServicesSection = () => {
-
+  const data = servicesProvided;
+  console.log(data);
   return (
-    <section id="services" className="relative py-section scroll-m-20">
+    <section id="services" className="relative scroll-m-20 py-section">
       <span className="bg-mask-right" />
-      <div className="container relative mx-auto px-4 py-block">
-        <div className="md:w-2/3 text-center mx-auto mb-12">
-          <div className="text-sm uppercase font-bold tracking-widest text-primary mb-2">
+      <div className="relative container mx-auto px-4 py-block">
+        <div className="mx-auto mb-12 text-center md:w-2/3">
+          <div className="mb-2 text-sm font-bold tracking-widest text-primary uppercase">
             Services
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium mb-6">
+          <h2 className="mb-6 text-4xl font-medium md:text-5xl">
             Your success, our <span className="italic">commitment</span>.
           </h2>
-          <p className="text-subtle max-w-[80ch] mx-auto text-base-content/80">
+          <p className="text-subtle mx-auto max-w-[80ch] text-base-content/80">
             We bring ideas to life with stunning websites, powerful apps, and
             strategic online growth. Whether you need a new digital home,
-            marketing that converts, or reliable hosting and support, we&apos;re here
-            to make it happen.
+            marketing that converts, or reliable hosting and support, we&apos;re
+            here to make it happen.
           </p>
         </div>
-        <div className="my-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesProvided.map((service, i) => {
-            const IconComponent = service.icon;
-            return (
-              <Link
-                key={service.name}
-                href={service.link}
-                className="group relative"
-              >
-                <div className="card bg-base-300 shadow-md hover:shadow-accent/30 card-border border-base-300 hover:border-accent/30 transition duration-250 p-8 flex items-center justify-center h-full gap-x-4">
-                  <div className="flex items-center gap-x-4 w-full mb-2">
-                    <IconComponent className="size-8 text-primary flex-shrink-0" />
-                    <h3 className="text-2xl font-medium flex-grow">
-                      {service.name}
-                    </h3>
-                  </div>
-                  <p className="text-base-content/80 max-w-[40ch]">
-                    {service.description}
-                  </p>
-                </div>
-                <ArrowTopRightOnSquareIcon className="size-5 text-secondary opacity-0 group-hover:opacity-70 transition duration-200 absolute top-2 right-2" />
-              </Link>
-            );
-          })}
+        <div className="relative my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <AnimatedCards servicesData={"homepage"} />
         </div>
         <div className="flex justify-center">
-          <ScrollButton targetId="forte">
-            Why
-          </ScrollButton>
+          <ScrollButton targetId="forte">Why</ScrollButton>
         </div>
       </div>
     </section>

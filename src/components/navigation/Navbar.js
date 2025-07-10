@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <>
       <NavbarClient>
-        <div className="navbar fixed top-0 left-0 right-0 h-20 z-200 bg-base-200 shadow-sm text-base-content">
+        <div className="fixed top-0 right-0 left-0 z-200 navbar h-20 bg-base-200 text-base-content shadow-sm">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -33,7 +33,7 @@ export default function Navbar() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content bg-base-200 rounded-box z-1 mt-4 w-52 p-2 shadow"
+                className="dropdown-content menu z-1 mt-4 w-52 rounded-box bg-base-200 p-2 shadow"
               >
                 {navItemsData.map((item, index) => (
                   <li key={index}>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 ))}
               </ul>
             </div>
-            <Link href="/" className="btn btn-ghost normal-case text-xl">
+            <Link href="/" className="btn text-xl normal-case btn-ghost">
               <Image
                 src="/images/relentnet-logo.png"
                 alt="RelentNet Logo"
@@ -72,7 +72,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 menu-lg">
+            <ul className="menu menu-horizontal menu-lg px-1">
               {navItemsData.map((item, index) => (
                 <li key={index}>
                   {item.dropdown ? (
@@ -80,7 +80,7 @@ export default function Navbar() {
                       <summary data-dropdown-id={`nav-${index}`}>
                         {item.label}
                       </summary>
-                      <ul className="dropdown-content bg-base-200 rounded-box z-1 !mt-6 w-80 p-2 shadow">
+                      <ul className="dropdown-content z-1 !mt-6 w-80 rounded-box bg-base-200 p-2 shadow">
                         {item.sections.map((section, sectionIndex) => (
                           <div key={sectionIndex}>
                             <li className="menu-title text-primary">
@@ -114,13 +114,13 @@ export default function Navbar() {
             <div className="dropdown dropdown-end">
               <details data-dropdown-id="account">
                 <summary
-                  className="btn btn-ghost text-lg"
+                  className="btn text-lg btn-ghost"
                   data-dropdown-id="account"
                 >
                   <UserIcon className="size-6" />
                   Account
                 </summary>
-                <ul className="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-4 w-72 p-2 shadow">
+                <ul className="dropdown-content menu z-1 mt-5 w-72 menu-lg rounded-box bg-base-200 p-2 shadow">
                   {accountItemsData[0].sections.map((section, sectionIndex) => (
                     <div key={sectionIndex}>
                       <li className="menu-title text-primary">
@@ -145,7 +145,7 @@ export default function Navbar() {
           </div>
         </div>
       </NavbarClient>
-      <div className="h-20 w-full relative bg-base-100" />
+      <div className="relative h-20 w-full bg-base-100" />
     </>
   );
 }

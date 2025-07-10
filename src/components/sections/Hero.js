@@ -15,7 +15,7 @@ export default function HeroSection() {
 
       <div className="radial-gradient relative z-10 hero min-h-[calc(100vh-5rem)] !bg-transparent">
         <div className="hero-content text-center">
-          <div className="max-w-md">
+          <div className="relative max-w-md">
             <motion.h1
               className="empower-text relative inline-block overflow-hidden rounded-xl p-2 text-5xl font-medium text-primary italic md:text-6xl"
               initial={{ y: 50, opacity: 0 }}

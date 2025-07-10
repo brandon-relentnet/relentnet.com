@@ -1,26 +1,7 @@
-"use client";
-
-import { motion } from "motion/react";
-import {
-  CursorArrowRaysIcon,
-  CubeTransparentIcon,
-  SparklesIcon,
-  WrenchIcon,
-  DocumentDuplicateIcon,
-  AcademicCapIcon,
-} from "@heroicons/react/24/solid";
 import SectionHeader from "@/components/sections/SectionHeader";
+import AnimatedCards from "@/components/AnimatedCards";
 
-const iconMap = {
-  CursorArrowRaysIcon,
-  CubeTransparentIcon,
-  SparklesIcon,
-  WrenchIcon,
-  DocumentDuplicateIcon,
-  AcademicCapIcon,
-};
-
-export default function BuilderFeatures({ features }) {
+export default function BuilderFeatures() {
   return (
     <SectionHeader
       title={
@@ -32,25 +13,8 @@ export default function BuilderFeatures({ features }) {
       subtitle="DIY Website Builder"
       desc="Get access to professional tools, templates, and training to build stunning websites yourself using Divi and Elementor."
     >
-      <div className="grid gap-6 text-left md:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, i) => {
-          const IconComponent = iconMap[feature.icon];
-          return (
-            <motion.div
-              key={i}
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="card border-2 border-base-300 bg-base-300 p-6 shadow-md transition duration-250 hover:border-accent/30 hover:shadow-accent/30"
-            >
-              <div className="justify-left mb-4 flex items-center gap-x-4">
-                <IconComponent className="size-10 text-primary" />
-                <h3 className="text-xl font-medium">{feature.title}</h3>
-              </div>
-              <p className="text-base-content/80">{feature.description}</p>
-            </motion.div>
-          );
-        })}
+      <div className="my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <AnimatedCards servicesData={"builderpage"} />
       </div>
     </SectionHeader>
   );
