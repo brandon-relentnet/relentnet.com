@@ -32,12 +32,10 @@ export default function AnimatedCards({ servicesData }) {
             transition={{ delay: i * 0.15, duration: 0.6 }}
             viewport={{ once: true }}
             key={i}
-            className="card-border card flex h-full flex-col items-start justify-center border-base-300 bg-base-300 p-8 text-left shadow-md transition duration-250 hover:border-accent/30 hover:shadow-accent/30"
           >
             {service.link && service.link !== "#" ? (
               <Link href={service.link} className="group relative h-full">
                 <CardContent service={service} />
-                <ArrowTopRightOnSquareIcon className="absolute -top-2 -right-2 size-5 text-secondary opacity-0 transition duration-200 group-hover:opacity-70" />
               </Link>
             ) : (
               <div className="group relative h-full">
@@ -53,12 +51,15 @@ export default function AnimatedCards({ servicesData }) {
 const CardContent = ({ service }) => {
   let IconComponent = service.icon;
   return (
-    <>
+    <div className="card-border card flex h-full flex-col items-start justify-center border-base-300 bg-base-300 p-8 text-left shadow-md transition duration-250 hover:border-accent/30 hover:shadow-accent/30">
       <div className="mb-4 flex items-center gap-x-4">
         <IconComponent className="size-8 flex-shrink-0 text-primary" />
         <h3 className="text-2xl font-medium">{service.name}</h3>
       </div>
       <p className="text-base-content/80">{service.description}</p>
-    </>
+      {service.link && service.link !== "#" && (
+        <ArrowTopRightOnSquareIcon className="absolute top-2 right-2 size-5 text-secondary opacity-0 transition duration-200 group-hover:opacity-70" />
+      )}
+    </div>
   );
 };
