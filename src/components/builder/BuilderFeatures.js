@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import { 
+import {
   CursorArrowRaysIcon,
   CubeTransparentIcon,
   SparklesIcon,
   WrenchIcon,
   DocumentDuplicateIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
 } from "@heroicons/react/24/solid";
 import SectionHeader from "@/components/sections/SectionHeader";
 
@@ -17,7 +17,7 @@ const iconMap = {
   SparklesIcon,
   WrenchIcon,
   DocumentDuplicateIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
 };
 
 export default function BuilderFeatures({ features }) {
@@ -25,7 +25,8 @@ export default function BuilderFeatures({ features }) {
     <SectionHeader
       title={
         <>
-          Everything You Need to Build <span className="italic">Amazing</span> Websites
+          Everything You Need to Build <span className="italic">Amazing</span>{" "}
+          Websites
         </>
       }
       subtitle="DIY Website Builder"
@@ -37,8 +38,8 @@ export default function BuilderFeatures({ features }) {
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className="card border-2 border-base-300 bg-base-300 p-6 shadow-md transition duration-250 hover:border-accent/30 hover:shadow-accent/30"
             >
