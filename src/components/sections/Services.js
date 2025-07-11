@@ -1,11 +1,7 @@
-import React from "react";
-import { servicesProvided } from "@/data/siteData";
 import ScrollButton from "../ScrollButton";
 import AnimatedCards from "../AnimatedCards";
 
 const ServicesSection = () => {
-  const data = servicesProvided;
-  console.log(data);
   return (
     <section id="services" className="relative scroll-m-20 py-section">
       <span className="bg-mask-right" />
