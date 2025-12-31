@@ -21,7 +21,7 @@
     "daisyui": "^5.5.14",
     "lucide-react": "^0.545.0",
     "motion": "^12.23.26",
-    "motion-plus": "^1.5.1",
+    "motion-plus": "https://api.motion.dev/registry.tgz?package=motion-plus&version=2.0.2&token=3fd1a0665ef5095974cfdaf7d4c8a1e282e7c376e39cda411e5b8f821ead9e0b",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.0.6"

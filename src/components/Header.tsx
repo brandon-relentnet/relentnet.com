@@ -29,7 +29,7 @@ export default function Header() {
                 src="/images/relentnet-logo.png"
                 alt="RelentNet logo"
                 style={{ height: '40px', width: 'auto' }}
-                className="w-auto !h-10 max-h-10 object-contain"
+                className="w-auto h-10! max-h-10 object-contain"
                 loading="lazy"
               />
               <span className="hidden sm:inline text-base-content">
@@ -56,7 +56,7 @@ export default function Header() {
 
           <Link
             to="/contact"
-            className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent shadow-lg px-5 py-2 rounded-2xl font-semibold text-sm text-base-100 hover:scale-105 active:scale-95 transition"
+            className="hidden md:inline-flex items-center gap-2 bg-linear-to-r from-primary to-accent shadow-lg px-5 py-2 rounded-2xl font-semibold text-sm text-base-100 hover:scale-105 active:scale-95 transition"
           >
             <Phone size={16} /> Let&apos;s Talk
           </Link>
