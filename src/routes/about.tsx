@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import PageHero from '@/components/PageHero'
 import TeamSection from '@/components/sections/TeamSection'
+import ManifestoSection from '@/components/sections/ManifestoSection'
 
 export const Route = createFileRoute('/about')({
   component: AboutPage,
@@ -19,6 +20,7 @@ function AboutPage() {
         subtitle="Our Mission"
         description="We are digital artisans dedicated to crafting and preserving your legacy online through bespoke design and concierge stewardship."
       />
+      <ManifestoSection />
       <TeamSection />
     </main>
   )

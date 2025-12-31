@@ -1,33 +1,34 @@
 import { BoltIcon } from '@heroicons/react/24/solid'
 
 import CustomButton from '@/components/CustomButton'
-import ScrollButton from '@/components/ScrollButton'
 
 export default function FinalCTA() {
   return (
-    <section className="relative bg-gradient-to-br from-primary/10 to-accent/10 py-section">
-      <div className="container py-block text-center">
-        <div className="section-subtitle">Let&apos;s Do This</div>
-        <h2 className="section-title">
-          Ready for a Website that{' '}
-          <span className="italic">Actually Works</span>?
-        </h2>
-        <p className="section-desc mb-6">
-          Join 40+ happy businesses who finally have websites they&apos;re proud
-          of.
-        </p>
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <CustomButton href="/contact" gradient={false}>
-            Start My Website Today
-          </CustomButton>
-          <span className="text-base-content/60">or</span>
-          <ScrollButton targetId="website-plans" up>
-            Check Prices Again
-          </ScrollButton>
+    <section className="relative overflow-hidden bg-base-200 py-section">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50" />
+      <div className="container relative py-block text-center">
+        <div className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-primary/80">
+          The Next Step
         </div>
-        <p className="mt-6 text-sm text-base-content/60">
-          <BoltIcon className="mr-1 inline-block size-4 text-accent/70" /> We
-          usually reply within 2 hours (during business hours)
+        <h2 className="mb-8 text-4xl font-light leading-tight md:text-5xl">
+          Your digital legacy <span className="italic text-white">awaits</span>.
+        </h2>
+        <p className="mx-auto mb-12 max-w-xl text-lg font-light leading-relaxed text-base-content/60">
+          Join a curated list of industry leaders who have entrusted their
+          online presence to RelentNet.
+        </p>
+        <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <CustomButton
+            href="/contact"
+            gradient={false}
+            className="px-10 py-4 text-sm tracking-widest uppercase"
+          >
+            Request Private Consultation
+          </CustomButton>
+        </div>
+        <p className="mt-8 text-xs font-medium uppercase tracking-wider text-base-content/40">
+          <BoltIcon className="mr-2 inline-block size-3 text-primary" />
+          Concierge Response within 2 hours
         </p>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import PageHero from '@/components/PageHero'
 import TrustIndicators from '@/components/website/TrustIndicators'
+import BespokeDetails from '@/components/website/BespokeDetails'
 import FAQSection from '@/components/website/FAQSection'
 import FinalCTA from '@/components/website/FinalCTA'
 import { faqs, trustIndicators } from '@/data/siteData'
@@ -24,6 +25,7 @@ function WebsitesPage() {
         button={{ label: 'Begin Consultation', target: 'cta' }}
       />
 
+      <BespokeDetails />
       <TrustIndicators indicators={trustIndicators} />
       <FAQSection faqs={faqs} />
       <FinalCTA />

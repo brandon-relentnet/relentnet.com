@@ -28,9 +28,9 @@ export default function TrustIndicators({ indicators }: TrustIndicatorsProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
-              <div className="mb-2 flex items-center justify-center text-4xl font-medium text-primary">
+              <div className="mb-2 flex items-center justify-center text-4xl font-light text-primary">
                 <AnimateNumber
-                  className="font-bold tracking-tighter"
+                  className="font-light tracking-tighter"
                   style={{
                     fontSize: 'inherit',
                     fontVariantNumeric: 'tabular-nums',
@@ -40,13 +40,13 @@ export default function TrustIndicators({ indicators }: TrustIndicatorsProps) {
                 >
                   {mounted ? indicator.number : 0}
                 </AnimateNumber>
-                {indicator.label === 'Happy Businesses' && '+'}
-                {indicator.label === 'Love Their Sites' && '%'}
-                {indicator.label === 'Star Reviews' && (
-                  <StarIcon className="ml-1 inline-block size-6" />
+                {indicator.label === 'Bespoke Projects' && '+'}
+                {indicator.label === 'Client Retention' && '%'}
+                {indicator.label === 'Star Service' && (
+                  <StarIcon className="ml-2 inline-block size-5 text-primary/80" />
                 )}
               </div>
-              <div className="text-sm text-base-content/60">
+              <div className="text-xs font-medium uppercase tracking-[0.2em] text-base-content/60">
                 {indicator.label}
               </div>
             </motion.div>
