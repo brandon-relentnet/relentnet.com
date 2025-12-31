@@ -40,11 +40,19 @@ export default function HomeParallaxBackground({
   useEffect(() => {
     if (wordsComplete) {
       animateVisionText()
+      setTimeout(applyShieldEffect, 1700)
     }
   }, [wordsComplete])
 
+  function applyShieldEffect() {
+    const empowerContainer = ref.current?.querySelector('#empower-heading-text')
+    if (empowerContainer) {
+      ;(empowerContainer as HTMLElement).classList.add('empower-text')
+    }
+  }
+
   function animateText() {
-    // Animate "Digital" text
+    // Animate "Empower" text
     const empowerContainer = ref.current?.querySelector('#empower-heading-text')
     if (empowerContainer) {
       const element = empowerContainer as HTMLElement
@@ -53,16 +61,17 @@ export default function HomeParallaxBackground({
         splitText(element).chars,
         {
           opacity: [0, 1],
-          y: [20, 0],
-          scale: [0.95, 1],
+          y: [15, 0],
+          scale: [0.8, 1],
         },
         {
           type: 'spring',
-          duration: 1.5,
+          duration: 0.8,
           bounce: 0,
-          delay: stagger(0.1),
+          delay: stagger(0.05),
           onComplete: () => {
             setWordsComplete(true)
+            console.log('running')
           },
         },
       )
@@ -77,33 +86,36 @@ export default function HomeParallaxBackground({
       animate(
         splitText(element).chars,
         {
+          height: [0, 'auto'],
           opacity: [0, 1],
-          y: [20, 0],
+          y: [-15, 0],
+          scale: [0.8, 1],
         },
         {
           type: 'spring',
-          duration: 1.5,
+          duration: 0.6,
           bounce: 0,
-          delay: stagger(0.05),
+          delay: stagger(0.03),
         },
       )
     }
   }
 
   // Create parallax effect - image moves slower than scroll
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
 
   return (
     <div ref={ref} className={className}>
       <motion.div
         style={animationComplete ? { y } : {}}
         className="radial-gradient absolute top-0 left-0 z-10 hero min-h-[calc(100vh-5rem)] bg-transparent!"
-        initial={{ scale: 1.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ scale: 2.5 }}
+        animate={{ scale: 1.2 }}
         transition={{
           type: 'spring',
-          bounce: 0,
-          duration: 2,
+          bounce: 0.4,
+          delay: 1.8,
+          duration: 1.2,
         }}
       />
 
@@ -111,45 +123,45 @@ export default function HomeParallaxBackground({
         style={animationComplete ? { y } : {}}
         className="absolute inset-0 hero-content z-20 mx-auto text-center"
       >
-        <div className="relative flex h-auto max-w-4xl flex-col items-center justify-center space-y-8">
+        <div className="relative flex h-auto max-w-md flex-col items-center justify-center">
           <h1
             id="empower-heading-text"
-            className={`invisible relative inline-block text-6xl font-light tracking-[0.2em] text-primary uppercase md:text-8xl`}
+            className={`invisible relative inline-block overflow-hidden rounded-xl p-2 text-5xl font-medium text-primary italic md:text-6xl`}
           >
-            Digital
+            Empower
           </h1>
 
           <h1
             id="vision-heading-text"
-            className="invisible text-center text-3xl font-extralight tracking-widest text-base-content uppercase md:text-4xl"
+            className="invisible mb-6 text-center text-3xl font-medium text-base-content md:text-4xl lg:text-5xl"
           >
-            Stewardship
+            your online vision.
           </h1>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, height: 0, scale: 0 }}
+            animate={{ opacity: 1, height: 'auto', scale: 1 }}
             transition={{
-              duration: 1,
-              delay: 2.5,
-              ease: 'easeOut',
+              type: 'spring',
+              bounce: 0.4,
+              delay: 1.8,
+              duration: 1.2,
             }}
-            className="pt-12"
           >
-            <ScrollButton targetId="services">Begin the Journey</ScrollButton>
+            <ScrollButton targetId="services">Explore</ScrollButton>
           </motion.div>
         </div>
       </motion.div>
 
       <motion.div
-        className="absolute -bottom-20 w-full flex justify-center opacity-60 mix-blend-overlay"
-        initial={{ opacity: 0, y: 100 }}
-        animate={isMounted ? { opacity: 0.6, y: 0 } : {}}
+        className="absolute -bottom-20"
+        initial={{ opacity: 0, y: 250, scale: 0 }}
+        animate={isMounted ? { opacity: 1, y: 0, scale: 1.1 } : {}}
         transition={{
           type: 'spring',
-          bounce: 0,
-          delay: 0.5,
-          duration: 2,
+          bounce: 0.4,
+          delay: 1.8,
+          duration: 1.2,
         }}
         onAnimationComplete={() => setAnimationComplete(true)}
         style={animationComplete ? { y } : {}}
@@ -157,7 +169,7 @@ export default function HomeParallaxBackground({
         <img
           src={src}
           alt={alt}
-          className={`max-w-4xl object-contain ${opacity}`}
+          className={`h-full w-full object-cover ${opacity}`}
         />
       </motion.div>
     </div>
