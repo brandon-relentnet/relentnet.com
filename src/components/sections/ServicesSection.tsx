@@ -4,27 +4,31 @@ import ScrollButton from '@/components/ScrollButton'
 export default function ServicesSection() {
   return (
     <section id="services" className="relative py-section">
-      <span className="bg-mask-right" />
+      <span className="bg-mask-right opacity-40" />
       <div className="container relative py-block">
-        <div className="mx-auto mb-12 text-center md:w-2/3">
-          <div className="mb-2 text-sm font-bold uppercase tracking-widest text-primary">
-            Services
+        <div className="mx-auto mb-16 text-center md:w-2/3">
+          <div className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-primary/80">
+            Expertise
           </div>
-          <h2 className="mb-6 text-4xl font-medium md:text-5xl">
-            Your success, our <span className="italic">commitment</span>.
+          <h2 className="mb-8 text-4xl font-light md:text-5xl leading-tight">
+            The art of{' '}
+            <span className="text-white italic font-normal">
+              digital presence
+            </span>
+            .
           </h2>
-          <p className="mx-auto max-w-[80ch] text-base-content/80">
-            We bring ideas to life with stunning websites, powerful apps, and
-            strategic online growth. Whether you need a new digital home,
-            marketing that converts, or reliable hosting and support, we&apos;re
-            here to make it happen.
+          <p className="mx-auto max-w-[65ch] text-lg text-base-content/60 font-light leading-relaxed">
+            We do not merely build websites; we curate digital experiences. From
+            the initial concept to the final line of code, every element is
+            crafted with precision to ensure your brand commands authority and
+            trust.
           </p>
         </div>
-        <div className="relative my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatedCards servicesData="homepage" />
+        <div className="relative my-12 grid gap-8 md:grid-cols-3">
+          <AnimatedCards />
         </div>
-        <div className="flex justify-center">
-          <ScrollButton targetId="forte">Why</ScrollButton>
+        <div className="flex justify-center pt-8">
+          <ScrollButton targetId="forte">Our Philosophy</ScrollButton>
         </div>
       </div>
     </section>

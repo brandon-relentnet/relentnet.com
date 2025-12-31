@@ -1,6 +1,6 @@
-import {  useId, useState } from 'react'
+import { useId, useState } from 'react'
 import { MotionConfig, motion } from 'motion/react'
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react'
 
 interface AccordionProps {
   faqs: Array<{ question: string; answer: string }>

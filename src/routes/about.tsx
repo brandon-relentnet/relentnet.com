@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import PageHero from '@/components/PageHero'
-import DifferenceSection from '@/components/sections/DifferenceSection'
 import TeamSection from '@/components/sections/TeamSection'
 
 export const Route = createFileRoute('/about')({
@@ -18,9 +17,8 @@ function AboutPage() {
           </>
         }
         subtitle="Our Mission"
-        description="We craft premium digital experiences with white-glove service. Learn more about our team and what makes us different."
+        description="We are digital artisans dedicated to crafting and preserving your legacy online through bespoke design and concierge stewardship."
       />
-      <DifferenceSection showLink={false} />
       <TeamSection />
     </main>
   )

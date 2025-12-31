@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'motion/react'
-import { ClockIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import type { ReactNode } from 'react'
 
 import PageHero from '@/components/PageHero'
@@ -9,21 +9,15 @@ import CustomButton from '@/components/CustomButton'
 const contactMethods = [
   {
     icon: EnvelopeIcon,
-    title: 'Email Us',
+    title: 'Private Email',
     detail: 'hello@relentnet.com',
-    description: "We'll get back to you within 2 hours",
+    description: 'Direct line to our principal architects',
   },
   {
     icon: PhoneIcon,
-    title: 'Call Us',
+    title: 'Studio Line',
     detail: '1-800-RELENT',
     description: 'Mon-Fri 9am-5pm EST',
-  },
-  {
-    icon: ClockIcon,
-    title: 'Response Time',
-    detail: '2 hours',
-    description: 'During business hours',
   },
 ]
 
@@ -37,48 +31,48 @@ function ContactPage() {
       <PageHero
         title={
           <>
-            Let&apos;s Build Something <span className="italic">Amazing</span>
+            Begin the <span className="italic">Conversation</span>.
           </>
         }
-        subtitle="Get In Touch"
-        description="Ready for a website that actually works? We're here to help."
+        subtitle="Inquiry"
+        description="We invite you to reach out and discuss how we can steward your digital presence."
       />
 
       <section className="relative py-section">
-        <span className="bg-mask-right" />
+        <span className="bg-mask-right opacity-30" />
         <div className="container relative py-block">
           <div className="mx-auto max-w-5xl">
-            <div className="grid gap-12 md:grid-cols-2">
+            <div className="grid gap-16 md:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="mb-6 text-3xl font-medium">
-                  Tell Us About Your Project
+                <h2 className="mb-8 text-3xl font-light tracking-wide">
+                  Share Your Vision
                 </h2>
-                <form className="space-y-6">
-                  <Field label="Your Name" placeholder="John Smith" />
+                <form className="space-y-8">
+                  <Field label="Name" placeholder="John Smith" />
                   <Field
-                    label="Email Address"
+                    label="Direct Email"
                     placeholder="john@example.com"
                     type="email"
                   />
                   <Field
-                    label="Phone Number (Optional)"
+                    label="Phone"
                     placeholder="(555) 123-4567"
                     type="tel"
                   />
                   <Field
-                    label="Tell Us About Your Project"
-                    placeholder="I need a website for my business that..."
+                    label="How may we assist you?"
+                    placeholder="I am looking to elevate my brand..."
                     textarea
                   />
                   <CustomButton
                     className="w-full justify-center"
                     showIcon={false}
                   >
-                    Send Message
+                    Request Consultation
                   </CustomButton>
                 </form>
               </motion.div>
@@ -87,48 +81,51 @@ function ContactPage() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-8"
+                className="space-y-12"
               >
                 <div>
-                  <h3 className="mb-4 text-2xl font-medium">
-                    Other Ways to Reach Us
-                  </h3>
-                  <p className="text-base-content/70">
-                    Choose whatever works best for you. We&apos;re here to help
-                    make your website dreams a reality.
+                  <h3 className="mb-6 text-2xl font-light">Direct Contact</h3>
+                  <p className="text-base-content/60 font-light leading-relaxed">
+                    We value personal connection. If you prefer to speak
+                    directly, please reach out through your preferred channel.
                   </p>
                 </div>
 
-                {contactMethods.map((method, index) => (
-                  <motion.div
-                    key={method.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="card bg-base-300 p-6 shadow-md transition hover:scale-[1.02]"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="rounded-full bg-primary/20 p-3">
-                        <method.icon className="size-6 text-primary" />
+                <div className="grid gap-6">
+                  {contactMethods.map((method, index) => (
+                    <motion.div
+                      key={method.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 + index * 0.1 }}
+                      className="group flex items-center gap-6 rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur-sm transition duration-300 hover:border-primary/20 hover:bg-white/10"
+                    >
+                      <div className="rounded-full bg-primary/10 p-4 text-primary transition duration-300 group-hover:bg-primary/20">
+                        <method.icon className="size-6" />
                       </div>
                       <div>
-                        <h4 className="font-semibold">{method.title}</h4>
-                        <p className="text-lg font-medium text-primary">
+                        <h4 className="font-medium tracking-wide text-white">
+                          {method.title}
+                        </h4>
+                        <p className="text-lg font-light text-primary/90">
                           {method.detail}
                         </p>
-                        <p className="text-sm text-base-content/60">
+                        <p className="text-sm text-base-content/50">
                           {method.description}
                         </p>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
 
-                <div className="card bg-gradient-to-br from-primary/10 to-accent/10 p-6">
-                  <h4 className="mb-2 font-semibold">Ready to Get Started?</h4>
-                  <p className="text-sm text-base-content/70">
-                    Most clients hear back from us in under 2 hours. We
-                    can&apos;t wait to learn about your project!
+                <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent p-8">
+                  <h4 className="mb-2 font-medium tracking-wide text-primary">
+                    Availability
+                  </h4>
+                  <p className="text-sm font-light leading-relaxed text-base-content/70">
+                    We limit our active client roster to ensure every project
+                    receives our full attention. We aim to respond to all
+                    inquiries within 24 hours.
                   </p>
                 </div>
               </motion.div>
@@ -138,25 +135,27 @@ function ContactPage() {
       </section>
 
       <section className="relative bg-base-200 py-section">
-        <span className="bg-mask-left" />
+        <span className="bg-mask-left opacity-30" />
         <div className="container relative py-block text-center">
           <h2 className="section-title">
             Common <span className="italic">Questions</span>
           </h2>
-          <div className="mx-auto mt-8 max-w-3xl space-y-6 text-left">
+          <div className="mx-auto mt-12 max-w-3xl space-y-6 text-left">
             <FAQCard question="What happens after I contact you?">
-              We&apos;ll reach out within 2 hours to schedule a quick 15-minute
-              call. We&apos;ll discuss your needs, answer questions, and provide
-              a custom quote.
+              We will review your inquiry and reach out to schedule a private
+              consultation. This allows us to understand your goals and ensure
+              we are the right partners for your vision.
             </FAQCard>
-            <FAQCard question="Do you work with small budgets?">
-              Absolutely! Our Empower package starts at just $1,299. Let&apos;s
-              talk about what works for your budget.
+            <FAQCard question="What is the investment required?">
+              We provide bespoke proposals tailored to the specific needs and
+              scale of your project. We prioritize value and long-term impact
+              over standardized pricing.
             </FAQCard>
-            <FAQCard question="What if I don't know what I want?">
-              Perfect! We&apos;ll guide you through everything and show you
-              examples. By the end of our call, you&apos;ll have a clear vision
-              for your new website.
+            <FAQCard question="I am not technical. Is that a problem?">
+              Not at all. We specialize in working with clients who prefer to
+              leave the technical details to us. We serve as your digital
+              concierge, handling everything from domain names to server
+              management.
             </FAQCard>
           </div>
         </div>
@@ -178,17 +177,19 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 block text-sm font-medium">{label}</label>
+      <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-base-content/70">
+        {label}
+      </label>
       {textarea ? (
         <textarea
           rows={5}
-          className="w-full rounded-xl border-2 border-base-300 bg-base-200 px-4 py-3 transition focus:border-primary focus:outline-none"
+          className="w-full rounded-xl border border-white/10 bg-base-100 px-6 py-4 text-base-content placeholder:text-base-content/20 transition focus:border-primary/50 focus:bg-base-100 focus:outline-none"
           placeholder={placeholder}
         />
       ) : (
         <input
           type={type}
-          className="w-full rounded-xl border-2 border-base-300 bg-base-200 px-4 py-3 transition focus:border-primary focus:outline-none"
+          className="w-full rounded-xl border border-white/10 bg-base-100 px-6 py-4 text-base-content placeholder:text-base-content/20 transition focus:border-primary/50 focus:bg-base-100 focus:outline-none"
           placeholder={placeholder}
         />
       )}
@@ -204,9 +205,13 @@ function FAQCard({
   children: ReactNode
 }) {
   return (
-    <div className="card bg-base-300 p-6 shadow-md">
-      <h3 className="mb-2 font-semibold">{question}</h3>
-      <p className="text-base-content/70">{children}</p>
+    <div className="rounded-xl border border-white/5 bg-base-300/50 p-8 shadow-lg backdrop-blur-sm transition duration-300 hover:border-primary/20">
+      <h3 className="mb-3 text-lg font-light tracking-wide text-white">
+        {question}
+      </h3>
+      <p className="font-light leading-relaxed text-base-content/60">
+        {children}
+      </p>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { PlayIcon } from '@heroicons/react/24/solid'
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react'
 
 interface ScrollButtonProps {
   targetId: string

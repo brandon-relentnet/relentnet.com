@@ -1,0 +1,40 @@
+
+> build
+> vite build && tsc
+
+vite v7.3.0 building client environment for production...
+transforming...
+/*! 🌼 daisyUI 5.5.14 */
+Found 1 warning while optimizing generated CSS:
+
+[2m│ }[22m
+[2m│ @layer base {[22m
+[2m│[22m   @property --radialprogress {
+[2m┆[22m            [33m[2m^--[22m Unknown at rule: @property[39m
+[2m┆[22m
+[2m│     syntax: "<percentage>";[22m
+[2m│     inherits: true;[22m
+
+✓ 2894 modules transformed.
+✗ Build failed in 2.01s
+error during build:
+src/routes/websites.tsx?tsr-split=component (12:2): "plans" is not exported by "src/data/siteData.ts", imported by "src/routes/websites.tsx?tsr-split=component".
+file: /home/brandon/code/clones/relentnet.com/src/routes/websites.tsx?tsr-split=component:12:2
+
+10: import {
+11:   faqs,
+12:   plans,
+      ^
+13:   platformComparison,
+14:   trustIndicators,
+
+    at getRollupError (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at Module.error (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:17022:16)
+    at Module.traceVariable (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:17478:29)
+    at ModuleScope.findVariable (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:15141:39)
+    at FunctionScope.findVariable (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:5688:38)
+    at FunctionBodyScope.findVariable (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:5688:38)
+    at Identifier.bind (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:5462:40)
+    at Property.bind (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
+    at ObjectExpression.bind (file:///home/brandon/code/clones/relentnet.com/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)

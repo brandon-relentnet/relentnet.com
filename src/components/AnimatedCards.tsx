@@ -1,30 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 
-import type {Service} from '@/data/siteData';
-import {
-  
-  builderFeatures,
-  servicesProvided
-} from '@/data/siteData'
+import type { Service } from '@/data/siteData'
+import { servicesProvided } from '@/data/siteData'
 
-export type CardSource = 'homepage' | 'builderpage'
-
-interface AnimatedCardsProps {
-  servicesData: CardSource
-}
-
-export default function AnimatedCards({ servicesData }: AnimatedCardsProps) {
+export default function AnimatedCards() {
   const [isMounted, setIsMounted] = useState(false)
-
-  const data = useMemo(() => {
-    const map: Record<CardSource, Array<Service>> = {
-      homepage: servicesProvided,
-      builderpage: builderFeatures,
-    }
-    return map[servicesData]
-  }, [servicesData])
 
   useEffect(() => {
     setIsMounted(true)
@@ -32,7 +14,7 @@ export default function AnimatedCards({ servicesData }: AnimatedCardsProps) {
 
   return (
     <>
-      {data.map((service, index) => (
+      {servicesProvided.map((service, index) => (
         <motion.div
           key={`${service.name}-${index}`}
           initial={{ opacity: 0, y: 25, x: -25 }}
@@ -59,16 +41,18 @@ function CardContent({ service }: { service: Service }) {
   const IconComponent = service.icon
 
   return (
-    <div className="flex h-full flex-col items-start justify-center rounded-2xl border border-base-300 bg-base-300/80 p-8 text-left shadow-lg transition duration-200 hover:border-accent/30 hover:shadow-accent/30">
-      <div className="mb-4 flex items-center gap-4">
+    <div className="flex h-full flex-col items-start justify-center rounded-2xl border border-white/5 bg-white/5 p-12 text-left backdrop-blur-sm transition duration-500 hover:border-primary/20 hover:bg-white/10">
+      <div className="mb-6 flex items-center gap-4">
         <IconComponent className="size-8 flex-shrink-0 text-primary" />
-        <h3 className="text-2xl font-semibold text-base-content">
+        <h3 className="text-xl font-light tracking-wide text-white uppercase">
           {service.name}
         </h3>
       </div>
-      <p className="text-base-content/80">{service.description}</p>
+      <p className="text-base-content/60 font-light leading-relaxed">
+        {service.description}
+      </p>
       {service.link && service.link !== '#' && (
-        <ArrowTopRightOnSquareIcon className="absolute right-4 top-4 size-5 text-secondary opacity-0 transition duration-200 group-hover:opacity-80" />
+        <ArrowTopRightOnSquareIcon className="absolute right-6 top-6 size-4 text-primary opacity-0 transition duration-300 group-hover:opacity-100" />
       )}
     </div>
   )
