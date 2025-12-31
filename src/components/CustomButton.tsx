@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
-import type { ReactNode } from 'react'
 import { PlayIcon } from '@heroicons/react/24/solid'
+import type { ReactNode } from 'react'
 
 interface CustomButtonProps {
   children: ReactNode
@@ -32,12 +32,7 @@ export default function CustomButton({
 
   if (href.startsWith('http')) {
     return (
-      <a
-        href={href}
-        className={baseClass}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={href} className={baseClass} target="_blank" rel="noreferrer">
         {children}
         {showIcon && (
           <PlayIcon className="ml-2 inline-block size-3 text-base-content transition-transform duration-200 group-hover:-rotate-180" />
@@ -47,7 +42,9 @@ export default function CustomButton({
   }
 
   return (
-    <Link to={href} className={baseClass}
+    <Link
+      to={href}
+      className={baseClass}
       activeProps={{ className: baseClass }}
     >
       {children}

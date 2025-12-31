@@ -8,10 +8,10 @@ import EnterpriseSection from '@/components/website/EnterpriseSection'
 import FAQSection from '@/components/website/FAQSection'
 import FinalCTA from '@/components/website/FinalCTA'
 import {
-  platformComparison,
-  plans,
-  trustIndicators,
   faqs,
+  plans,
+  platformComparison,
+  trustIndicators,
 } from '@/data/siteData'
 
 export const Route = createFileRoute('/websites')({

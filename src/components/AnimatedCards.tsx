@@ -2,10 +2,11 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'motion/react'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 
+import type {Service} from '@/data/siteData';
 import {
+  
   builderFeatures,
-  servicesProvided,
-  type Service,
+  servicesProvided
 } from '@/data/siteData'
 
 export type CardSource = 'homepage' | 'builderpage'
@@ -18,7 +19,7 @@ export default function AnimatedCards({ servicesData }: AnimatedCardsProps) {
   const [isMounted, setIsMounted] = useState(false)
 
   const data = useMemo(() => {
-    const map: Record<CardSource, Service[]> = {
+    const map: Record<CardSource, Array<Service>> = {
       homepage: servicesProvided,
       builderpage: builderFeatures,
     }
@@ -40,10 +41,7 @@ export default function AnimatedCards({ servicesData }: AnimatedCardsProps) {
           transition={{ delay: index * 0.15, duration: 0.6 }}
         >
           {service.link && service.link !== '#' ? (
-            <a
-              href={service.link}
-              className="group relative block h-full"
-            >
+            <a href={service.link} className="group relative block h-full">
               <CardContent service={service} />
             </a>
           ) : (

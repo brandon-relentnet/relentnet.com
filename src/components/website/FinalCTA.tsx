@@ -9,10 +9,12 @@ export default function FinalCTA() {
       <div className="container py-block text-center">
         <div className="section-subtitle">Let&apos;s Do This</div>
         <h2 className="section-title">
-          Ready for a Website that <span className="italic">Actually Works</span>?
+          Ready for a Website that{' '}
+          <span className="italic">Actually Works</span>?
         </h2>
         <p className="section-desc mb-6">
-          Join 40+ happy businesses who finally have websites they&apos;re proud of.
+          Join 40+ happy businesses who finally have websites they&apos;re proud
+          of.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <CustomButton href="/contact" gradient={false}>

@@ -3,7 +3,10 @@ import { Link } from '@tanstack/react-router'
 
 const policyLinks = [
   { label: 'Cloud-Based Contract', href: '/policies/cloud-based-contracts' },
-  { label: 'Web & App Development Contract', href: '/policies/web-and-app-contracts' },
+  {
+    label: 'Web & App Development Contract',
+    href: '/policies/web-and-app-contracts',
+  },
   { label: 'Privacy Policy', href: '/policies/privacy-policy' },
   { label: 'Refund Policy', href: '/policies/refund-policy' },
   { label: 'Terms of Service', href: '/policies/terms-of-service' },
@@ -13,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-base-300">
       <div className="container grid gap-8 py-section text-center md:grid-cols-2 md:text-left lg:grid-cols-4">
-        <div className="mx-auto max-w-[150px] md:mx-0">
+        <div className="mx-auto max-w-37.5 md:mx-0">
           <img
             src="/images/relentnet-logo.png"
             alt="RelentNet Logo"
@@ -27,22 +30,34 @@ export default function Footer() {
           </div>
           <ul className="space-y-2">
             <li>
-              <Link to="/" className="hover:text-primary transition duration-200">
+              <Link
+                to="/"
+                className="hover:text-primary transition duration-200"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/websites" className="hover:text-primary transition duration-200">
+              <Link
+                to="/websites"
+                className="hover:text-primary transition duration-200"
+              >
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-primary transition duration-200">
+              <Link
+                to="/about"
+                className="hover:text-primary transition duration-200"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-primary transition duration-200">
+              <Link
+                to="/contact"
+                className="hover:text-primary transition duration-200"
+              >
                 Contact
               </Link>
             </li>
@@ -74,7 +89,10 @@ export default function Footer() {
           <ul className="space-y-2 text-base-content/80">
             {policyLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="hover:text-primary transition duration-200">
+                <a
+                  href={link.href}
+                  className="hover:text-primary transition duration-200"
+                >
                   {link.label}
                 </a>
               </li>
@@ -87,7 +105,11 @@ export default function Footer() {
           <p>&copy; 2025 RelentNet. All rights reserved.</p>
           <div className="flex gap-4">
             {['Twitter', 'LinkedIn', 'Facebook'].map((network) => (
-              <a key={network} href="#" className="hover:text-primary transition duration-200">
+              <a
+                key={network}
+                href="#"
+                className="hover:text-primary transition duration-200"
+              >
                 {network}
               </a>
             ))}

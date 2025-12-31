@@ -1,14 +1,18 @@
-import { useId, useState, type ReactNode } from 'react'
-import { motion, MotionConfig } from 'motion/react'
+import {  useId, useState } from 'react'
+import { MotionConfig, motion } from 'motion/react'
+import type {ReactNode} from 'react';
 
 interface AccordionProps {
-  faqs: { question: string; answer: string }[]
+  faqs: Array<{ question: string; answer: string }>
   className?: string
 }
 
 function onlyKeyboardFocus(callback: () => void) {
   return (event: React.FocusEvent<HTMLButtonElement>) => {
-    if (event.type === 'focus' && event.currentTarget.matches(':focus-visible')) {
+    if (
+      event.type === 'focus' &&
+      event.currentTarget.matches(':focus-visible')
+    ) {
       callback()
     }
   }
@@ -53,7 +57,9 @@ function Item({ header, children }: { header: string; children: ReactNode }) {
           >
             <span>{header}</span>
             <ChevronDownIcon />
-            {hasFocus && <motion.div layoutId="focus-ring" className="focus-ring" />}
+            {hasFocus && (
+              <motion.div layoutId="focus-ring" className="focus-ring" />
+            )}
           </motion.button>
         </h3>
         <motion.div
@@ -63,11 +69,13 @@ function Item({ header, children }: { header: string; children: ReactNode }) {
           variants={{
             open: {
               height: 'auto',
-              maskImage: 'linear-gradient(to bottom, black 100%, transparent 100%)',
+              maskImage:
+                'linear-gradient(to bottom, black 100%, transparent 100%)',
             },
             closed: {
               height: 0,
-              maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+              maskImage:
+                'linear-gradient(to bottom, black 50%, transparent 100%)',
             },
           }}
         >
@@ -88,7 +96,9 @@ function Item({ header, children }: { header: string; children: ReactNode }) {
 
 export default function Accordion({ faqs, className = '' }: AccordionProps) {
   return (
-    <div className={`accordion card relative mx-auto max-w-3xl bg-base-300 text-left shadow-md ${className}`}>
+    <div
+      className={`accordion card relative mx-auto max-w-3xl bg-base-300 text-left shadow-md ${className}`}
+    >
       {faqs.map((faq) => (
         <Item key={faq.question} header={faq.question}>
           <p>{faq.answer}</p>

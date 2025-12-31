@@ -2,7 +2,7 @@ import Accordion from '@/components/Accordion'
 import SectionHeader from '@/components/sections/SectionHeader'
 
 interface FAQSectionProps {
-  faqs: { question: string; answer: string }[]
+  faqs: Array<{ question: string; answer: string }>
 }
 
 export default function FAQSection({ faqs }: FAQSectionProps) {

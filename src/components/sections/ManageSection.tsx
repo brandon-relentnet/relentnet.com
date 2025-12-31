@@ -12,8 +12,8 @@ export default function ManageSection() {
               <span className="italic">Simplify</span> your online management.
             </h2>
             <p className="mb-12 text-base-content/80">
-              RelentNet&apos;s all-in-one website management platform simplifies your
-              digital operations, from design and development to hosting,
+              RelentNet&apos;s all-in-one website management platform simplifies
+              your digital operations, from design and development to hosting,
               updates, and ongoing support.
             </p>
             <div className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">

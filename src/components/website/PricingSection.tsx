@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
+import type { Plan } from '@/data/siteData'
 import { PricingCard } from '@/components/PricingCard'
 import SectionHeader from '@/components/sections/SectionHeader'
 import PlatformToggle from '@/components/website/PlatformToggle'
-import type { Plan } from '@/data/siteData'
 
 interface PricingSectionProps {
-  plans: Plan[]
+  plans: Array<Plan>
 }
 
 export default function PricingSection({ plans }: PricingSectionProps) {
@@ -53,7 +53,10 @@ export default function PricingSection({ plans }: PricingSectionProps) {
           </span>{' '}
           Your own unique design (no templates!), looks great on phones, easy
           training, and all the files are yours.
-          <span className="font-medium text-primary"> Pay in full and save 5%.</span>
+          <span className="font-medium text-primary">
+            {' '}
+            Pay in full and save 5%.
+          </span>
         </p>
       </div>
     </SectionHeader>

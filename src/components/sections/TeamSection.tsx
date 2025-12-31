@@ -18,9 +18,10 @@ export default function TeamSection() {
             excellence in web development, design, and digital marketing.
           </p>
         </div>
-        <div className="mb-8 grid grid-cols-1 gap-12 lg:grid-cols-2 2xl:grid-cols-4">
+        <div className="mb-8 grid grid-cols-1 place-content-center gap-12 lg:grid-cols-2 2xl:grid-cols-4">
+          {' '}
           {teamMembers.map((member) => (
-            <div key={member.name} className="grid-card text-center">
+            <div key={member.name} className="text-center">
               <img
                 src={member.image}
                 className="mx-auto mb-6 rounded-xl"

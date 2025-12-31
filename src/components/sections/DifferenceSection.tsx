@@ -1,12 +1,14 @@
-import { theDifferences } from '@/data/siteData'
 import { Link } from '@tanstack/react-router'
 import { PlayIcon } from '@heroicons/react/24/solid'
+import { theDifferences } from '@/data/siteData'
 
 interface DifferenceSectionProps {
   showLink?: boolean
 }
 
-export default function DifferenceSection({ showLink = true }: DifferenceSectionProps) {
+export default function DifferenceSection({
+  showLink = true,
+}: DifferenceSectionProps) {
   return (
     <section id="the-difference" className="relative bg-base-200 py-section">
       <span className="bg-mask-left" />
@@ -25,7 +27,9 @@ export default function DifferenceSection({ showLink = true }: DifferenceSection
                   <p className="mb-1.5 italic text-base-content/80">
                     {difference.subtitle}
                   </p>
-                  <p className="text-base-content/80">{difference.description}</p>
+                  <p className="text-base-content/80">
+                    {difference.description}
+                  </p>
                 </div>
               </div>
             )
@@ -40,15 +44,15 @@ export default function DifferenceSection({ showLink = true }: DifferenceSection
             you.
           </h2>
           <p className="mb-4 max-w-[80ch] text-base-content/80">
-            At RelentNet, we don&apos;t just design websites and provide hosting –
-            we cultivate lasting partnerships. We build, launch, and then stay
+            At RelentNet, we don&apos;t just design websites and provide hosting
+            – we cultivate lasting partnerships. We build, launch, and then stay
             close so your digital presence keeps performing.
           </p>
           <p className="mb-6 max-w-[80ch] text-base-content/80">
             Unlike the giants who hand you a product and disappear, we provide
             ongoing support to help your digital presence grow and thrive. Our
-            journey with you extends far beyond launch; it&apos;s a collaboration
-            focused on your success.
+            journey with you extends far beyond launch; it&apos;s a
+            collaboration focused on your success.
           </p>
           {showLink && (
             <Link

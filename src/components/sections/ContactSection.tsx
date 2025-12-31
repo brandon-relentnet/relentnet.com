@@ -11,10 +11,14 @@ export default function ContactSection() {
             Contact
           </div>
           <h2 className="mb-6 text-4xl font-medium md:text-5xl">
-            Enough talk, let&apos;s grow <span className="italic">together</span>.
+            Enough talk, let&apos;s grow{' '}
+            <span className="italic">together</span>.
           </h2>
           <div className="flex justify-center">
-            <Link to="/contact" className="gradient-button inline-flex items-center gap-2">
+            <Link
+              to="/contact"
+              className="gradient-button inline-flex items-center gap-2"
+            >
               Get in touch
               <PlayIcon className="size-3 text-base-content transition-transform duration-200" />
             </Link>

@@ -28,7 +28,9 @@ export function PricingCard({
     <motion.div
       initial={showAnimation ? { opacity: 0, y: 20 } : undefined}
       animate={showAnimation ? { opacity: 1, y: 0 } : undefined}
-      transition={showAnimation ? { delay: animationDelay, duration: 0.6 } : undefined}
+      transition={
+        showAnimation ? { delay: animationDelay, duration: 0.6 } : undefined
+      }
       className={`relative rounded-2xl border p-8 shadow-lg transition duration-200 ${
         plan.popular
           ? 'scale-105 border-primary bg-base-300/90 shadow-primary/40'

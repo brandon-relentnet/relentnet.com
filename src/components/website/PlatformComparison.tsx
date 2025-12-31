@@ -1,11 +1,13 @@
-import SectionHeader from '@/components/sections/SectionHeader'
 import type { PlatformComparison as PlatformComparisonType } from '@/data/siteData'
+import SectionHeader from '@/components/sections/SectionHeader'
 
 interface PlatformComparisonProps {
   comparison: PlatformComparisonType
 }
 
-export default function PlatformComparison({ comparison }: PlatformComparisonProps) {
+export default function PlatformComparison({
+  comparison,
+}: PlatformComparisonProps) {
   return (
     <SectionHeader
       title="Which Platform is Right for You?"
@@ -49,7 +51,7 @@ function PlatformCard({
   title: string
   subtitle: string
   badge: string
-  benefits: string[]
+  benefits: Array<string>
   badgeTone: 'primary' | 'accent'
 }) {
   return (

@@ -6,7 +6,7 @@ import { StarIcon } from '@heroicons/react/24/solid'
 import type { TrustIndicator } from '@/data/siteData'
 
 interface TrustIndicatorsProps {
-  indicators: TrustIndicator[]
+  indicators: Array<TrustIndicator>
 }
 
 export default function TrustIndicators({ indicators }: TrustIndicatorsProps) {

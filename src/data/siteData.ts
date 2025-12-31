@@ -1,11 +1,9 @@
-import type { ComponentType, SVGProps } from 'react'
-
 import {
   AcademicCapIcon,
   ChartBarIcon,
   CodeBracketIcon,
-  CursorArrowRaysIcon,
   CubeTransparentIcon,
+  CursorArrowRaysIcon,
   DocumentDuplicateIcon,
   EyeIcon,
   HeartIcon,
@@ -16,6 +14,8 @@ import {
   WrenchIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/solid'
+import type { ComponentType, SVGProps } from 'react'
+
 
 export type IconType = ComponentType<SVGProps<SVGSVGElement>>
 
@@ -48,7 +48,7 @@ export type Plan = {
   monthlyPrice?: number
   yearlyPrice?: number
   description: string
-  features: string[]
+  features: Array<string>
   bestFor: string
   popular?: boolean
 }
@@ -62,16 +62,16 @@ export type PlatformComparison = {
   wordpress: {
     title: string
     subtitle: string
-    benefits: string[]
+    benefits: Array<string>
   }
   nextjs: {
     title: string
     subtitle: string
-    benefits: string[]
+    benefits: Array<string>
   }
 }
 
-export const servicesProvided: Service[] = [
+export const servicesProvided: Array<Service> = [
   {
     name: 'Custom Websites',
     icon: CodeBracketIcon,
@@ -91,7 +91,7 @@ export const servicesProvided: Service[] = [
     icon: PaintBrushIcon,
     link: '/services/graphic-design',
     description:
-      "Stand out with professional branding, eye-catching visuals, and a design identity that speaks to your audience.",
+      'Stand out with professional branding, eye-catching visuals, and a design identity that speaks to your audience.',
   },
   {
     name: 'Social Media Growth',
@@ -112,11 +112,11 @@ export const servicesProvided: Service[] = [
     icon: WrenchScrewdriverIcon,
     link: '/services/support-packages',
     description:
-      "Peace of mind with expert support, ongoing maintenance, and proactive solutions to keep your business running smoothly.",
+      'Peace of mind with expert support, ongoing maintenance, and proactive solutions to keep your business running smoothly.',
   },
 ]
 
-export const teamMembers: TeamMember[] = [
+export const teamMembers: Array<TeamMember> = [
   {
     name: 'Brandon Harris',
     role: 'Co-founder & Software Engineer',
@@ -128,14 +128,14 @@ export const teamMembers: TeamMember[] = [
     name: 'Daniel Velez',
     role: 'Co-founder & Sales',
     blurb:
-      'The sales expert, dedicated to empowering businesses with innovative web solutions. With a passion for technology and a knack for building relationships, he\'s committed to driving success through digital excellence.',
+      "The sales expert, dedicated to empowering businesses with innovative web solutions. With a passion for technology and a knack for building relationships, he's committed to driving success through digital excellence.",
     image: '/images/daniel-velez-pfp.webp',
   },
   {
     name: 'Linsey Delaune',
     role: 'Graphic Designer',
     blurb:
-      "Our graphic designer, adding an artistic touch to your logos or banners. Her designs are visually appealing, ensuring a unique charm that resonates with your audience.",
+      'Our graphic designer, adding an artistic touch to your logos or banners. Her designs are visually appealing, ensuring a unique charm that resonates with your audience.',
     image: '/images/lindsey-delaune-pfp.webp',
   },
   {
@@ -147,7 +147,7 @@ export const teamMembers: TeamMember[] = [
   },
 ]
 
-export const theDifferences: Difference[] = [
+export const theDifferences: Array<Difference> = [
   {
     title: 'Results-Driven Excellence',
     subtitle: 'We don’t just build—we deliver measurable success.',
@@ -185,7 +185,7 @@ export const faqs = [
   {
     question: 'Why not just use Wix or Squarespace?',
     answer:
-      'Those are like buying clothes off the rack - they work, but everyone looks the same. We create a website that\'s uniquely yours, plus we handle all the tricky stuff like making sure Google finds you and customers actually call.',
+      "Those are like buying clothes off the rack - they work, but everyone looks the same. We create a website that's uniquely yours, plus we handle all the tricky stuff like making sure Google finds you and customers actually call.",
   },
   {
     question: 'What about hosting? Is that included?',
@@ -204,7 +204,7 @@ export const faqs = [
   },
 ]
 
-export const plans: Plan[] = [
+export const plans: Array<Plan> = [
   {
     name: 'Empower',
     tagline: 'Perfect Start',
@@ -253,7 +253,7 @@ export const plans: Plan[] = [
   },
 ]
 
-export const trustIndicators: TrustIndicator[] = [
+export const trustIndicators: Array<TrustIndicator> = [
   { number: 41, label: 'Happy Businesses' },
   { number: 98, label: 'Love Their Sites' },
   { number: 4.9, label: 'Star Reviews' },
