@@ -8,6 +8,9 @@ interface CustomButtonProps {
   showIcon?: boolean
   href?: string
   gradient?: boolean
+  disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
+  onClick?: () => void
 }
 
 export default function CustomButton({
@@ -16,12 +19,20 @@ export default function CustomButton({
   showIcon = true,
   href,
   gradient = true,
+  disabled = false,
+  type = 'button',
+  onClick,
 }: CustomButtonProps) {
-  const baseClass = `${gradient ? 'gradient-button' : 'ghost-button'} group ${className}`
+  const baseClass = `${gradient ? 'gradient-button' : 'ghost-button'} group ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`
 
   if (!href) {
     return (
-      <button type="button" className={baseClass}>
+      <button
+        type={type}
+        className={baseClass}
+        disabled={disabled}
+        onClick={onClick}
+      >
         {children}
         {showIcon && (
           <PlayIcon className="ml-2 inline-block size-3 text-base-content transition-transform duration-200 group-hover:-rotate-180" />

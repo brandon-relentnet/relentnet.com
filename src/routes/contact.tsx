@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import type { ReactNode } from 'react'
+import { useState, type FormEvent, type ReactNode } from 'react'
 
 import PageHero from '@/components/PageHero'
 import CustomButton from '@/components/CustomButton'
@@ -26,6 +26,68 @@ export const Route = createFileRoute('/contact')({
 })
 
 function ContactPage() {
+  const [formData, setFormData] = useState({
+    Name: '',
+    Email: '',
+    'Company Name': '',
+    'Phone Number': '',
+    'Will your site include payments?': 'No',
+    'Extra info you want us to know': '',
+  })
+  const [status, setStatus] = useState<
+    'idle' | 'submitting' | 'success' | 'error'
+  >('idle')
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setStatus('submitting')
+
+    const payload = {
+      ...formData,
+      submittedAt: new Date().toISOString(),
+      formMode: 'production', // Set to production as we are using the production URL
+    }
+
+    console.log('Sending Payload:', payload)
+
+    try {
+      const response = await fetch(
+        'https://n8n.relentnet.com/webhook/fe703944-aa84-4947-a491-0046d4c0f22a',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        },
+      )
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({
+          Name: '',
+          Email: '',
+          'Company Name': '',
+          'Phone Number': '',
+          'Will your site include payments?': 'No',
+          'Extra info you want us to know': '',
+        })
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      console.error('Submission error:', error)
+      setStatus('error')
+    }
+  }
+
   return (
     <main>
       <PageHero
@@ -51,30 +113,92 @@ function ContactPage() {
                 <h2 className="mb-8 text-3xl font-light tracking-wide">
                   Share Your Vision
                 </h2>
-                <form className="space-y-8">
-                  <Field label="Name" placeholder="John Smith" />
-                  <Field
-                    label="Direct Email"
-                    placeholder="john@example.com"
-                    type="email"
-                  />
-                  <Field
-                    label="Phone"
-                    placeholder="(555) 123-4567"
-                    type="tel"
-                  />
-                  <Field
-                    label="How may we assist you?"
-                    placeholder="I am looking to elevate my brand..."
-                    textarea
-                  />
-                  <CustomButton
-                    className="w-full justify-center"
-                    showIcon={false}
-                  >
-                    Request Consultation
-                  </CustomButton>
-                </form>
+                {status === 'success' ? (
+                  <div className="rounded-2xl border border-green-500/20 bg-green-500/10 p-8 text-center">
+                    <h3 className="mb-2 text-xl font-medium text-green-400">
+                      Message Received
+                    </h3>
+                    <p className="text-base-content/70">
+                      Thank you for reaching out. We will be in touch shortly.
+                    </p>
+                    <button
+                      onClick={() => setStatus('idle')}
+                      className="mt-6 text-sm text-primary hover:underline"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <Field
+                      label="Name"
+                      name="Name"
+                      placeholder="John Smith"
+                      value={formData.Name}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Field
+                      label="Email"
+                      name="Email"
+                      type="email"
+                      placeholder="john@example.com"
+                      value={formData.Email}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Field
+                      label="Company Name"
+                      name="Company Name"
+                      placeholder="Acme Corp"
+                      value={formData['Company Name']}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Field
+                      label="Will your site include payments?"
+                      name="Will your site include payments?"
+                      type="select"
+                      value={formData['Will your site include payments?']}
+                      onChange={handleChange}
+                      options={['No', 'Yes']}
+                    />
+                    <Field
+                      label="Phone Number"
+                      name="Phone Number"
+                      placeholder="(555) 123-4567"
+                      type="tel"
+                      value={formData['Phone Number']}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Field
+                      label="Extra info you want us to know"
+                      name="Extra info you want us to know"
+                      placeholder="I am looking to elevate my brand..."
+                      textarea
+                      value={formData['Extra info you want us to know']}
+                      onChange={handleChange}
+                    />
+
+                    {status === 'error' && (
+                      <p className="text-sm text-red-400">
+                        Something went wrong. Please try again.
+                      </p>
+                    )}
+
+                    <CustomButton
+                      className="w-full justify-center"
+                      showIcon={false}
+                      disabled={status === 'submitting'}
+                      type="submit"
+                    >
+                      {status === 'submitting'
+                        ? 'Sending...'
+                        : 'Request Consultation'}
+                    </CustomButton>
+                  </form>
+                )}
               </motion.div>
 
               <motion.div
@@ -164,17 +288,33 @@ function ContactPage() {
   )
 }
 
+interface FieldProps {
+  label: string
+  name: string
+  placeholder?: string
+  type?: string
+  textarea?: boolean
+  value: string
+  onChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => void
+  options?: string[]
+  required?: boolean
+}
+
 function Field({
   label,
+  name,
   placeholder,
   type = 'text',
   textarea,
-}: {
-  label: string
-  placeholder: string
-  type?: string
-  textarea?: boolean
-}) {
+  value,
+  onChange,
+  options,
+  required,
+}: FieldProps) {
   return (
     <div>
       <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-base-content/70">
@@ -182,13 +322,46 @@ function Field({
       </label>
       {textarea ? (
         <textarea
+          name={name}
           rows={5}
+          value={value}
+          onChange={onChange}
+          required={required}
           className="w-full rounded-xl border border-white/10 bg-base-100 px-6 py-4 text-base-content placeholder:text-base-content/20 transition focus:border-primary/50 focus:bg-base-100 focus:outline-none"
           placeholder={placeholder}
         />
+      ) : type === 'select' && options ? (
+        <div className="relative">
+          <select
+            name={name}
+            value={value}
+            onChange={onChange}
+            required={required}
+            className="w-full appearance-none rounded-xl border border-white/10 bg-base-100 px-6 py-4 text-base-content transition focus:border-primary/50 focus:bg-base-100 focus:outline-none"
+          >
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-base-content/50">
+            <svg
+              className="h-4 w-4 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg>
+          </div>
+        </div>
       ) : (
         <input
+          name={name}
           type={type}
+          value={value}
+          onChange={onChange}
+          required={required}
           className="w-full rounded-xl border border-white/10 bg-base-100 px-6 py-4 text-base-content placeholder:text-base-content/20 transition focus:border-primary/50 focus:bg-base-100 focus:outline-none"
           placeholder={placeholder}
         />
