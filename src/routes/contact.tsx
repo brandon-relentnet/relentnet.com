@@ -1,7 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import { useState, type FormEvent, type ReactNode } from 'react'
+import { useState } from 'react'
+import type { FormEvent, ReactNode } from 'react'
 
 import PageHero from '@/components/PageHero'
 import CustomButton from '@/components/CustomButton'
@@ -27,12 +28,12 @@ export const Route = createFileRoute('/contact')({
 
 function ContactPage() {
   const [formData, setFormData] = useState({
-    Name: '',
-    Email: '',
-    'Company Name': '',
-    'Phone Number': '',
-    'Will your site include payments?': 'No',
-    'Extra info you want us to know': '',
+    first_name: '',
+    last_name: '',
+    company_name: '',
+    phone: '',
+    email: '',
+    communication_preference: 'Digital',
   })
   const [status, setStatus] = useState<
     'idle' | 'submitting' | 'success' | 'error'
@@ -72,12 +73,12 @@ function ContactPage() {
       if (response.ok) {
         setStatus('success')
         setFormData({
-          Name: '',
-          Email: '',
-          'Company Name': '',
-          'Phone Number': '',
-          'Will your site include payments?': 'No',
-          'Extra info you want us to know': '',
+          first_name: '',
+          last_name: '',
+          company_name: '',
+          phone: '',
+          email: '',
+          communication_preference: 'Digital',
         })
       } else {
         setStatus('error')
@@ -130,56 +131,88 @@ function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid gap-6 md:grid-cols-2">
+                      <Field
+                        label="First Name"
+                        name="first_name"
+                        placeholder="John"
+                        value={formData.first_name}
+                        onChange={handleChange}
+                        required
+                      />
+                      <Field
+                        label="Last Name"
+                        name="last_name"
+                        placeholder="Smith"
+                        value={formData.last_name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
                     <Field
-                      label="Name"
-                      name="Name"
-                      placeholder="John Smith"
-                      value={formData.Name}
+                      label="Company Name"
+                      name="company_name"
+                      placeholder="Acme Corp"
+                      value={formData.company_name}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Field
+                      label="Phone"
+                      name="phone"
+                      placeholder="(555) 123-4567"
+                      type="tel"
+                      value={formData.phone}
                       onChange={handleChange}
                       required
                     />
                     <Field
                       label="Email"
-                      name="Email"
+                      name="email"
                       type="email"
                       placeholder="john@example.com"
-                      value={formData.Email}
+                      value={formData.email}
                       onChange={handleChange}
                       required
                     />
-                    <Field
-                      label="Company Name"
-                      name="Company Name"
-                      placeholder="Acme Corp"
-                      value={formData['Company Name']}
-                      onChange={handleChange}
-                      required
-                    />
-                    <Field
-                      label="Will your site include payments?"
-                      name="Will your site include payments?"
-                      type="select"
-                      value={formData['Will your site include payments?']}
-                      onChange={handleChange}
-                      options={['No', 'Yes']}
-                    />
-                    <Field
-                      label="Phone Number"
-                      name="Phone Number"
-                      placeholder="(555) 123-4567"
-                      type="tel"
-                      value={formData['Phone Number']}
-                      onChange={handleChange}
-                      required
-                    />
-                    <Field
-                      label="Extra info you want us to know"
-                      name="Extra info you want us to know"
-                      placeholder="I am looking to elevate my brand..."
-                      textarea
-                      value={formData['Extra info you want us to know']}
-                      onChange={handleChange}
-                    />
+
+                    <div>
+                      <label className="mb-4 block text-xs font-medium uppercase tracking-wider text-base-content/70">
+                        How do you prefer to discuss your website?
+                      </label>
+                      <div className="flex gap-6">
+                        <label className="flex items-center gap-3 cursor-pointer group">
+                          <input
+                            type="radio"
+                            name="communication_preference"
+                            value="Digital"
+                            checked={
+                              formData.communication_preference === 'Digital'
+                            }
+                            onChange={handleChange}
+                            className="radio radio-primary"
+                          />
+                          <span className="text-sm group-hover:text-primary transition-colors">
+                            Digital
+                          </span>
+                        </label>
+                        <label className="flex items-center gap-3 cursor-pointer group">
+                          <input
+                            type="radio"
+                            name="communication_preference"
+                            value="Analog"
+                            checked={
+                              formData.communication_preference === 'Analog'
+                            }
+                            onChange={handleChange}
+                            className="radio radio-primary"
+                          />
+                          <span className="text-sm group-hover:text-primary transition-colors">
+                            Analog
+                          </span>
+                        </label>
+                      </div>
+                    </div>
 
                     {status === 'error' && (
                       <p className="text-sm text-red-400">
@@ -300,7 +333,7 @@ interface FieldProps {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) => void
-  options?: string[]
+  options?: Array<string>
   required?: boolean
 }
 
