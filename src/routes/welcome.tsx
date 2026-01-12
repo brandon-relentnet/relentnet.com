@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect, type FormEvent } from 'react'
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+
+import SEO from '@/components/SEO'
 import CustomButton from '@/components/CustomButton'
 
 interface SearchParams {
@@ -137,6 +139,10 @@ function WelcomePage() {
   if (status === 'loading') {
     return (
       <div className="flex min-h-[60vh] w-full items-center justify-center">
+        <SEO
+          title="Authenticating..."
+          description="Client Onboarding Portal"
+        />
         <div className="flex flex-col items-center gap-4">
           <span className="loading loading-ring loading-lg text-primary"></span>
           <p className="animate-pulse text-sm font-light tracking-widest text-base-content/50">
@@ -150,6 +156,10 @@ function WelcomePage() {
   if (status === 'error') {
     return (
       <div className="flex min-h-[60vh] w-full items-center justify-center p-4">
+        <SEO
+          title="Access Error"
+          description="Client Onboarding Portal - Error"
+        />
         <div className="max-w-md text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-red-500/10 text-red-500">
             <ExclamationTriangleIcon className="h-8 w-8" />
@@ -169,6 +179,10 @@ function WelcomePage() {
   if (status === 'success') {
     return (
       <div className="flex min-h-[60vh] w-full items-center justify-center p-4">
+        <SEO
+          title="Onboarding Complete"
+          description="Client Onboarding Portal - Success"
+        />
         <div
           className="max-w-md text-center"
         >
@@ -191,6 +205,11 @@ function WelcomePage() {
 
   return (
     <main className="relative min-h-screen py-24">
+      <SEO
+        title="Client Onboarding"
+        description="Project onboarding portal for RelentNet clients."
+        canonical="https://relentnet.com/welcome"
+      />
       {/* Background Ambience */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 -mr-40 -mt-40 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />

@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
+import SEO from '@/components/SEO'
 import HeroSection from '@/components/sections/HeroSection'
 import ProcessSection from '@/components/sections/ProcessSection'
 import ServicesSection from '@/components/sections/ServicesSection'
@@ -14,6 +15,11 @@ export const Route = createFileRoute('/')({
 function HomePage() {
   return (
     <main className="bg-base-100 text-base-content">
+      <SEO
+        title="Bespoke Digital Architecture"
+        description="RelentNet crafts high-performance, visually stunning websites that serve as the foundation of your digital legacy. Bespoke development & concierge stewardship."
+        canonical="https://relentnet.com/"
+      />
       <HeroSection />
       <ProcessSection />
       <ServicesSection />

@@ -3,6 +3,7 @@ import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
 
+import SEO from '@/components/SEO'
 import PageHero from '@/components/PageHero'
 import CustomButton from '@/components/CustomButton'
 
@@ -90,6 +91,11 @@ function ContactPage() {
 
   return (
     <main>
+      <SEO
+        title="Contact Us"
+        description="Begin the conversation. Reach out to RelentNet for a private consultation regarding your digital presence."
+        canonical="https://relentnet.com/contact"
+      />
       <PageHero
         title={
           <>

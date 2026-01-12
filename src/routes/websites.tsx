@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
+import SEO from '@/components/SEO'
 import PageHero from '@/components/PageHero'
 import TrustIndicators from '@/components/website/TrustIndicators'
 import BespokeDetails from '@/components/website/BespokeDetails'
@@ -14,6 +15,11 @@ export const Route = createFileRoute('/websites')({
 function WebsitesPage() {
   return (
     <main>
+      <SEO
+        title="Web Development Services"
+        description="Expert web development services including bespoke design, concierge management, and visual identity branding."
+        canonical="https://relentnet.com/websites"
+      />
       <PageHero
         title={
           <>
