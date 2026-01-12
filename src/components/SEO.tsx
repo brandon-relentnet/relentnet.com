@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { useEffect } from 'react'
 
 interface SEOProps {
   title: string
@@ -20,25 +20,58 @@ export default function SEO({
   const siteTitle = 'RelentNet'
   const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`
 
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {canonical && <link rel="canonical" href={canonical} />}
+  useEffect(() => {
+    // Update Title
+    document.title = fullTitle
 
-      {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={ogImage} />
-      {canonical && <meta property="og:url" content={canonical} />}
+    // Helper to update or create meta tags
+    const updateMeta = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
+      let element = document.querySelector(`meta[${attribute}="${name}"]`)
+      if (!element) {
+        element = document.createElement('meta')
+        element.setAttribute(attribute, name)
+        document.head.appendChild(element)
+      }
+      element.setAttribute('content', content)
+    }
 
-      {/* Twitter */}
-      <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-    </Helmet>
-  )
+    // Helper to update or create link tags
+    const updateLink = (rel: string, href: string) => {
+      let element = document.querySelector(`link[rel="${rel}"]`)
+      if (!element) {
+        element = document.createElement('link')
+        element.setAttribute('rel', rel)
+        document.head.appendChild(element)
+      }
+      element.setAttribute('href', href)
+    }
+
+    // Basic Meta
+    updateMeta('description', description)
+
+    // Open Graph
+    updateMeta('og:title', fullTitle, 'property')
+    updateMeta('og:description', description, 'property')
+    updateMeta('og:type', ogType, 'property')
+    updateMeta('og:image', ogImage, 'property')
+    if (canonical) updateMeta('og:url', canonical, 'property')
+
+    // Twitter
+    updateMeta('twitter:card', twitterCard)
+    updateMeta('twitter:title', fullTitle)
+    updateMeta('twitter:description', description)
+    updateMeta('twitter:image', ogImage)
+
+    // Canonical
+    if (canonical) {
+      updateLink('canonical', canonical)
+    } else {
+      // Remove canonical if not provided to avoid stale tags
+      const element = document.querySelector('link[rel="canonical"]')
+      if (element) document.head.removeChild(element)
+    }
+
+  }, [fullTitle, description, canonical, ogImage, ogType, twitterCard])
+
+  return null
 }
