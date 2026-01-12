@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect, type FormEvent } from 'react'
-import { motion } from 'motion/react'
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import CustomButton from '@/components/CustomButton'
 
@@ -170,9 +169,7 @@ function WelcomePage() {
   if (status === 'success') {
     return (
       <div className="flex min-h-[60vh] w-full items-center justify-center p-4">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+        <div
           className="max-w-md text-center"
         >
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-500/10 text-green-500">
@@ -187,7 +184,7 @@ function WelcomePage() {
           <CustomButton href="/" showIcon={false}>
             Return Home
           </CustomButton>
-        </motion.div>
+        </div>
       </div>
     )
   }
@@ -201,9 +198,7 @@ function WelcomePage() {
       </div>
 
       <div className="container relative mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="mx-auto max-w-4xl"
         >
           {/* Header */}
@@ -438,7 +433,7 @@ function WelcomePage() {
               </CustomButton>
             </div>
           </form>
-        </motion.div>
+        </div>
       </div>
     </main>
   )

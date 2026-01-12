@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'motion/react'
 import SectionHeader from '@/components/sections/SectionHeader'
 
 const steps = [
@@ -37,12 +36,8 @@ export default function ProcessSection() {
         <div className="absolute top-12 left-0 z-0 hidden h-0.5 w-full bg-gradient-to-r from-base-300 via-primary/30 to-base-300 md:block" />
 
         {steps.map((step, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
             className="relative z-10"
           >
             <div className="flex flex-col items-center text-center">
@@ -58,7 +53,7 @@ export default function ProcessSection() {
                 {step.description}
               </p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </SectionHeader>

@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'motion/react'
 import {
   DevicePhoneMobileIcon,
   MagnifyingGlassIcon,
@@ -51,13 +50,9 @@ export default function BespokeDetails() {
         </div>
 
         <div className="grid gap-12 md:grid-cols-2 lg:gap-20">
-          {standards.map((item, index) => (
-            <motion.div
+          {standards.map((item) => (
+            <div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
               className="flex gap-6 group"
             >
               <div className="shrink-0">
@@ -73,7 +68,7 @@ export default function BespokeDetails() {
                   {item.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { motion } from 'motion/react'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
@@ -106,10 +105,7 @@ function ContactPage() {
         <div className="container relative py-block">
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-16 md:grid-cols-2">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+              <div
               >
                 <h2 className="mb-8 text-3xl font-light tracking-wide">
                   Share Your Vision
@@ -232,12 +228,9 @@ function ContactPage() {
                     </CustomButton>
                   </form>
                 )}
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <div
                 className="space-y-12"
               >
                 <div>
@@ -249,12 +242,9 @@ function ContactPage() {
                 </div>
 
                 <div className="grid gap-6">
-                  {contactMethods.map((method, index) => (
-                    <motion.div
+                  {contactMethods.map((method) => (
+                    <div
                       key={method.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
                       className="group flex items-center gap-6 rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur-sm transition duration-300 hover:border-primary/20 hover:bg-white/10"
                     >
                       <div className="rounded-full bg-primary/10 p-4 text-primary transition duration-300 group-hover:bg-primary/20">
@@ -271,7 +261,7 @@ function ContactPage() {
                           {method.description}
                         </p>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
@@ -285,7 +275,7 @@ function ContactPage() {
                     inquiries within 24 hours.
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

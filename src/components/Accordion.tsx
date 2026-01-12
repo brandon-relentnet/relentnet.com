@@ -1,5 +1,4 @@
 import { useId, useState } from 'react'
-import { MotionConfig, motion } from 'motion/react'
 import type { ReactNode } from 'react'
 
 interface AccordionProps {
@@ -7,20 +6,9 @@ interface AccordionProps {
   className?: string
 }
 
-function onlyKeyboardFocus(callback: () => void) {
-  return (event: React.FocusEvent<HTMLButtonElement>) => {
-    if (
-      event.type === 'focus' &&
-      event.currentTarget.matches(':focus-visible')
-    ) {
-      callback()
-    }
-  }
-}
-
-function ChevronDownIcon() {
+function ChevronDownIcon({ isOpen }: { isOpen: boolean }) {
   return (
-    <motion.svg
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -30,74 +18,49 @@ function ChevronDownIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      variants={{ open: { rotate: 180 }, closed: { rotate: 0 } }}
+      className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
     >
       <path d="m6 9 6 6 6-6" />
-    </motion.svg>
+    </svg>
   )
 }
 
 function Item({ header, children }: { header: string; children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [hasFocus, setHasFocus] = useState(false)
   const id = useId()
 
   return (
-    <MotionConfig transition={{ duration: 0.3 }}>
-      <motion.section initial={false} animate={isOpen ? 'open' : 'closed'}>
-        <h3>
-          <motion.button
-            id={`${id}-button`}
-            aria-expanded={isOpen}
-            aria-controls={id}
-            onClick={() => setIsOpen((prev) => !prev)}
-            onFocus={onlyKeyboardFocus(() => setHasFocus(true))}
-            onBlur={() => setHasFocus(false)}
-            className="cursor-pointer"
-          >
-            <span>{header}</span>
-            <ChevronDownIcon />
-            {hasFocus && (
-              <motion.div layoutId="focus-ring" className="focus-ring" />
-            )}
-          </motion.button>
-        </h3>
-        <motion.div
-          id={id}
-          aria-labelledby={`${id}-button`}
-          className="accordion-content"
-          variants={{
-            open: {
-              height: 'auto',
-              maskImage:
-                'linear-gradient(to bottom, black 100%, transparent 100%)',
-            },
-            closed: {
-              height: 0,
-              maskImage:
-                'linear-gradient(to bottom, black 50%, transparent 100%)',
-            },
-          }}
+    <section>
+      <h3>
+        <button
+          id={`${id}-button`}
+          aria-expanded={isOpen}
+          aria-controls={id}
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="cursor-pointer w-full flex items-center justify-between py-4"
         >
-          <motion.div
-            variants={{
-              open: { filter: 'blur(0px)', opacity: 1 },
-              closed: { filter: 'blur(2px)', opacity: 0 },
-            }}
-          >
-            {children}
-          </motion.div>
-        </motion.div>
-        <hr />
-      </motion.section>
-    </MotionConfig>
+          <span className="font-medium text-lg">{header}</span>
+          <ChevronDownIcon isOpen={isOpen} />
+        </button>
+      </h3>
+      <div
+        id={id}
+        aria-labelledby={`${id}-button`}
+        className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'}`}
+      >
+        <div className="text-base-content/80">
+          {children}
+        </div>
+      </div>
+      <hr className="border-base-content/10" />
+    </section>
   )
 }
 
 export default function Accordion({ faqs, className = '' }: AccordionProps) {
   return (
     <div
-      className={`accordion card relative mx-auto max-w-3xl bg-base-300 text-left shadow-md ${className}`}
+      className={`accordion card relative mx-auto max-w-3xl bg-base-300 px-8 py-4 text-left shadow-md ${className}`}
     >
       {faqs.map((faq) => (
         <Item key={faq.question} header={faq.question}>

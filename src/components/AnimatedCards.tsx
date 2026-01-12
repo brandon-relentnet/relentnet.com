@@ -1,26 +1,14 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'motion/react'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 
 import type { Service } from '@/data/siteData'
 import { servicesProvided } from '@/data/siteData'
 
 export default function AnimatedCards() {
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
   return (
     <>
       {servicesProvided.map((service, index) => (
-        <motion.div
+        <div
           key={`${service.name}-${index}`}
-          initial={{ opacity: 0, y: 25, x: -25 }}
-          whileInView={isMounted ? { opacity: 1, y: 0, x: 0 } : {}}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.15, duration: 0.6 }}
         >
           {service.link && service.link !== '#' ? (
             <a href={service.link} className="group relative block h-full">
@@ -31,7 +19,7 @@ export default function AnimatedCards() {
               <CardContent service={service} />
             </div>
           )}
-        </motion.div>
+        </div>
       ))}
     </>
   )
