@@ -7,9 +7,7 @@ export default function AnimatedCards() {
   return (
     <>
       {servicesProvided.map((service, index) => (
-        <div
-          key={`${service.name}-${index}`}
-        >
+        <div key={`${service.name}-${index}`}>
           {service.link && service.link !== '#' ? (
             <a href={service.link} className="group relative block h-full">
               <CardContent service={service} />

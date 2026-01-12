@@ -51,10 +51,7 @@ export default function BespokeDetails() {
 
         <div className="grid gap-12 md:grid-cols-2 lg:gap-20">
           {standards.map((item) => (
-            <div
-              key={item.title}
-              className="flex gap-6 group"
-            >
+            <div key={item.title} className="flex gap-6 group">
               <div className="shrink-0">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-colors duration-500 group-hover:border-primary/50 group-hover:bg-primary/10">
                   <item.icon className="h-6 w-6" />

@@ -15,16 +15,18 @@ The codebase is clean, type-safe, and follows a consistent architectural pattern
 ## 2. Architecture & Tech Stack
 
 ### Core Technology
-*   **Runtime/Build:** Vite 7 (Latest) offers near-instant HMR and efficient production builds.
-*   **Framework:** React 19 (Latest) utilizing functional components and hooks exclusively.
-*   **Routing:** `@tanstack/react-router` enables type-safe, file-based routing. This is a robust choice that prevents broken links and ensures payload efficiency via code splitting.
-*   **Language:** TypeScript (Strict Mode). The project maintains high type safety standards with minimal `any` usage.
+
+- **Runtime/Build:** Vite 7 (Latest) offers near-instant HMR and efficient production builds.
+- **Framework:** React 19 (Latest) utilizing functional components and hooks exclusively.
+- **Routing:** `@tanstack/react-router` enables type-safe, file-based routing. This is a robust choice that prevents broken links and ensures payload efficiency via code splitting.
+- **Language:** TypeScript (Strict Mode). The project maintains high type safety standards with minimal `any` usage.
 
 ### Styling System
-*   **Tailwind CSS 4:** Utilized for atomic utility styling.
-*   **DaisyUI 5:** Provides a semantic component layer (`btn`, `card`, `input`) on top of Tailwind.
-*   **Theming:** A custom "darknet" theme is defined in `src/styles.css`, utilizing CSS variables for consistent design tokens (colors, spacing, border radii).
-*   **Refactor Note:** The recent removal of `framer-motion` means animations are now handled via standard CSS transitions (e.g., `transition-all duration-300`), resulting in a significantly lighter JavaScript bundle.
+
+- **Tailwind CSS 4:** Utilized for atomic utility styling.
+- **DaisyUI 5:** Provides a semantic component layer (`btn`, `card`, `input`) on top of Tailwind.
+- **Theming:** A custom "darknet" theme is defined in `src/styles.css`, utilizing CSS variables for consistent design tokens (colors, spacing, border radii).
+- **Refactor Note:** The recent removal of `framer-motion` means animations are now handled via standard CSS transitions (e.g., `transition-all duration-300`), resulting in a significantly lighter JavaScript bundle.
 
 ---
 
@@ -47,27 +49,31 @@ src/
 ```
 
 **Key Observations:**
-*   **Centralized Data:** `src/data/siteData.ts` acts as a pseudo-CMS. This is an excellent pattern for static sites, allowing non-developers to potentially update copy without touching component logic.
-*   **Component Composition:** The separation between `sections` (layout) and atomic components encourages reusability. For example, `SectionHeader` is used across multiple sections to enforce consistent typography.
+
+- **Centralized Data:** `src/data/siteData.ts` acts as a pseudo-CMS. This is an excellent pattern for static sites, allowing non-developers to potentially update copy without touching component logic.
+- **Component Composition:** The separation between `sections` (layout) and atomic components encourages reusability. For example, `SectionHeader` is used across multiple sections to enforce consistent typography.
 
 ---
 
 ## 4. Code Quality Review
 
 ### Strengths
-*   **Type Safety:** Interfaces (e.g., `interface FieldProps`, `type Service`) are defined explicitly, ensuring props are validated at build time.
-*   **Modern React Patterns:** Hooks (`useState`, `useEffect`) are used correctly. There are no class components or legacy patterns.
-*   **Performance-First:**
-    *   Images use modern formats (`.webp`) and `loading="lazy"`.
-    *   Components are mostly presentational, reducing the risk of unnecessary re-renders.
-    *   The removal of JS-based animations has heavily reduced the main thread work during scrolling.
-*   **Clean Abstractions:** Complex logic (like the Accordion state or Form handling) is encapsulated within specific components, keeping page views clean.
+
+- **Type Safety:** Interfaces (e.g., `interface FieldProps`, `type Service`) are defined explicitly, ensuring props are validated at build time.
+- **Modern React Patterns:** Hooks (`useState`, `useEffect`) are used correctly. There are no class components or legacy patterns.
+- **Performance-First:**
+  - Images use modern formats (`.webp`) and `loading="lazy"`.
+  - Components are mostly presentational, reducing the risk of unnecessary re-renders.
+  - The removal of JS-based animations has heavily reduced the main thread work during scrolling.
+- **Clean Abstractions:** Complex logic (like the Accordion state or Form handling) is encapsulated within specific components, keeping page views clean.
 
 ### Recent Refactoring (Animation Simplification)
+
 The transition from `motion` to static/CSS implementations was successful.
-*   **Accordion:** Now uses a simple `max-height` and `opacity` transition for a smooth, JS-light toggle effect.
-*   **Hero/Parallax:** Complex scroll-jacking parallax effects were replaced with static CSS layouts, improving scroll performance on lower-end devices.
-*   **Forms:** Form submission states (`loading`, `success`, `error`) are handled via local state with clear UI feedback.
+
+- **Accordion:** Now uses a simple `max-height` and `opacity` transition for a smooth, JS-light toggle effect.
+- **Hero/Parallax:** Complex scroll-jacking parallax effects were replaced with static CSS layouts, improving scroll performance on lower-end devices.
+- **Forms:** Form submission states (`loading`, `success`, `error`) are handled via local state with clear UI feedback.
 
 ---
 

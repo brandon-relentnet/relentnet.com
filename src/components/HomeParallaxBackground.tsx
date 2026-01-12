@@ -1,11 +1,11 @@
+import ScrollButton from '@/components/ScrollButton'
+
 interface HomeParallaxBackgroundProps {
   src?: string
   alt?: string
   opacity?: string
   className?: string
 }
-
-import ScrollButton from '@/components/ScrollButton'
 
 export default function HomeParallaxBackground({
   src = '/images/software-15.png',

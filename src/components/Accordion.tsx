@@ -48,9 +48,7 @@ function Item({ header, children }: { header: string; children: ReactNode }) {
         aria-labelledby={`${id}-button`}
         className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'}`}
       >
-        <div className="text-base-content/80">
-          {children}
-        </div>
+        <div className="text-base-content/80">{children}</div>
       </div>
       <hr className="border-base-content/10" />
     </section>

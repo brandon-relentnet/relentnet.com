@@ -25,7 +25,11 @@ export default function SEO({
     document.title = fullTitle
 
     // Helper to update or create meta tags
-    const updateMeta = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
+    const updateMeta = (
+      name: string,
+      content: string,
+      attribute: 'name' | 'property' = 'name',
+    ) => {
       let element = document.querySelector(`meta[${attribute}="${name}"]`)
       if (!element) {
         element = document.createElement('meta')
@@ -70,7 +74,6 @@ export default function SEO({
       const element = document.querySelector('link[rel="canonical"]')
       if (element) document.head.removeChild(element)
     }
-
   }, [fullTitle, description, canonical, ogImage, ogType, twitterCard])
 
   return null

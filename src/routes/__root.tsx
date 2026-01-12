@@ -1,4 +1,8 @@
-import { Outlet, createRootRoute, ScrollRestoration } from '@tanstack/react-router'
+import {
+  Outlet,
+  ScrollRestoration,
+  createRootRoute,
+} from '@tanstack/react-router'
 
 import Header from '@/components/Header'
 import Footer from '@/components/sections/Footer'

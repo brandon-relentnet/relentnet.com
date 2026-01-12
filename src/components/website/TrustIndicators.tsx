@@ -12,10 +12,7 @@ export default function TrustIndicators({ indicators }: TrustIndicatorsProps) {
       <div className="container">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {indicators.map((indicator) => (
-            <div
-              key={indicator.label}
-              className="text-center"
-            >
+            <div key={indicator.label} className="text-center">
               <div className="mb-2 flex items-center justify-center text-4xl font-light text-primary">
                 <span
                   className="font-light tracking-tighter"

@@ -111,8 +111,7 @@ function ContactPage() {
         <div className="container relative py-block">
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-16 md:grid-cols-2">
-              <div
-              >
+              <div>
                 <h2 className="mb-8 text-3xl font-light tracking-wide">
                   Share Your Vision
                 </h2>
@@ -236,9 +235,7 @@ function ContactPage() {
                 )}
               </div>
 
-              <div
-                className="space-y-12"
-              >
+              <div className="space-y-12">
                 <div>
                   <h3 className="mb-6 text-2xl font-light">Direct Contact</h3>
                   <p className="text-base-content/60 font-light leading-relaxed">

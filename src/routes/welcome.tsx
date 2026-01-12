@@ -1,6 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState, useEffect, type FormEvent } from 'react'
-import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import {  useEffect, useState } from 'react'
+import {
+  CheckCircleIcon,
+  ExclamationTriangleIcon,
+} from '@heroicons/react/24/outline'
+import type {FormEvent} from 'react';
 
 import SEO from '@/components/SEO'
 import CustomButton from '@/components/CustomButton'
@@ -139,10 +143,7 @@ function WelcomePage() {
   if (status === 'loading') {
     return (
       <div className="flex min-h-[60vh] w-full items-center justify-center">
-        <SEO
-          title="Authenticating..."
-          description="Client Onboarding Portal"
-        />
+        <SEO title="Authenticating..." description="Client Onboarding Portal" />
         <div className="flex flex-col items-center gap-4">
           <span className="loading loading-ring loading-lg text-primary"></span>
           <p className="animate-pulse text-sm font-light tracking-widest text-base-content/50">
@@ -183,9 +184,7 @@ function WelcomePage() {
           title="Onboarding Complete"
           description="Client Onboarding Portal - Success"
         />
-        <div
-          className="max-w-md text-center"
-        >
+        <div className="max-w-md text-center">
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-500/10 text-green-500">
             <CheckCircleIcon className="h-10 w-10" />
           </div>
@@ -217,9 +216,7 @@ function WelcomePage() {
       </div>
 
       <div className="container relative mx-auto px-4">
-        <div
-          className="mx-auto max-w-4xl"
-        >
+        <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-12 text-center md:text-left">
             <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">

@@ -36,10 +36,7 @@ export default function ProcessSection() {
         <div className="absolute top-12 left-0 z-0 hidden h-0.5 w-full bg-gradient-to-r from-base-300 via-primary/30 to-base-300 md:block" />
 
         {steps.map((step, index) => (
-          <div
-            key={index}
-            className="relative z-10"
-          >
+          <div key={index} className="relative z-10">
             <div className="flex flex-col items-center text-center">
               <div className="mb-8 flex h-24 w-24 items-center justify-center rounded-full border-2 border-primary/20 bg-base-100 shadow-[0_0_30px_-10px_rgba(243,138,184,0.3)] backdrop-blur-sm">
                 <span className="font-mono text-3xl font-light text-primary">

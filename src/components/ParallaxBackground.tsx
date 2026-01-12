@@ -13,9 +13,7 @@ export default function ParallaxBackground({
 }: ParallaxBackgroundProps) {
   return (
     <div className={className}>
-      <div
-        className="absolute inset-0"
-      >
+      <div className="absolute inset-0">
         <img
           src={src}
           alt={alt}
